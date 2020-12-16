@@ -21,9 +21,28 @@
 
 ## Passo 02 - Desenvolver as Funções das Receitas e Funções Auxiliares
 `Lorem_Ipsum`
+![kweiss](k_weissbier.PNG)
+
+![defines](Defines.PNG)
+
+![vglobais](Variaveis_Globais.PNG)
+
+![vteclado](Void_Teclado.PNG)
+
+![receitash](receitash.PNG)
 
 ## Passo 03 - Desenvolver a main 
 `Lorem_Ipsum`
+![vescolha](Void_escolha.PNG)
 
-## Passo 04 -
+## Passo 04 - Simular pelo PICSimLab
 `Lorem_Ipsum`
+
+![receitas](Receitas.PNG)
+
+![escolha](Escolha.PNG)
+
+![degTempo](Degrau_Tempo.PNG)
+
+![fim](Fim.PNG)
+

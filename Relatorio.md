@@ -47,22 +47,21 @@ Nesta etapa do desenvolvimento, notou-se que algumas das bibliotecas utilizadas,
 
 `Lorem_Ipsum`
 
-## Passo 03 - Desenvolver a main 
-`Lorem_Ipsum`
+## Passo 03 - Desenvolver a main()
+A `main` foi desenvolvida utilizando como base o próprio funcionamento em cooperative multitasking das funções `amber_lager()` e `k_weissbier()`, no entanto, diferentemente de realizar ações envolvendo o buzzer, o cooler ou o display de 7 segmentos, utiliza apenas o teclado matricial e o display de LCD. A função `escolha()` permite que seja possível verificar a afirmação anterior, sendo ela uma simplificação da função `Teclado()` para apenas alterar telas do display e chamar as funções das receitas escolhidas.
 
 ![vescolha](Void_escolha.PNG)
 
 ## Passo 04 - Simular pelo PICSimLab
-`Lorem_Ipsum`
+Por fim, é realizada a simulação de todo o funcionamento da microcervejaria, verificando a utilização da `main()` inicialmente e das funções `amber_lager()` ou `k_weissbier()`, dependendo da escolha do usuário. 
 
+Incialmente são exibidas as receitas
 ![receitas](Receitas.PNG)
 
-`Lorem_Ipsum`
-
+Então é possível navegar entre a tela de receitas e de escolha, nas quais é possível pressionar as teclas `1` (Amber Lager), `2` (Kristall Weissbier), `*`(Voltar) e `#`(Prosseguir)
 ![escolha](Escolha.PNG)
 
-`Lorem_Ipsum`
-
+Posteriormente a receita é iniciada, os detalhes desta são exibidos e a temperatura começa a subir até o `degrau0` daquela cerveja, então o controlador aguardará a inserção dos maltes
 ![imaltes](Insira_Maltes.PNG)
 
 `Lorem_Ipsum`

@@ -13,11 +13,11 @@ O presente projeto consiste no sistema de controle de uma microcervejaria, respo
 - Buzzer : Avisará o usuário quando uma etapa for concluída, além de avisar o fim da receita também;  
 
 ## Passo 01 - Adicionar Bibliotecas Necessárias 
-`Lorem_Ipsum`
+Incialmente foram adicionadas todas as bibliotecas necessárias para o funcionamento correto do microcontrolador com os periféricos citados anteriormente, principalmente dentro das funções `amber_lager()` e `k_weissbier()`, responsáveis por todo o processo da brassagem em cada tipo de cerveja. Estas utilizaram as seguintes bibliotecas :
 
 ![cervejas](Bibliotecas_Cervejas.PNG)
 
-`Lorem_Ipsum`
+Já no caso da `main()`, o uso das bibliotecas ficou ligeiramente reduzido, isso porque ela apenas é responsável por realizar a interação inicial com o usuário para realizar a chamada das funções das cervejas posteriormente. Esta utilizou as seguintes bibliotecas : 
 
 ![main](Bibliotecas_Main.PNG)
 

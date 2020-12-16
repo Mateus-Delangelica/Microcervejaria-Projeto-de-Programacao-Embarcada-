@@ -1,0 +1,2291 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"26 ./pwm.h
+[; ;./pwm.h: 26:  void pwmInit(void);
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"24 ./ssd.h
+[; ;./ssd.h: 24:  void ssdInit(void);
+[v _ssdInit `(v ~T0 @X0 0 ef ]
+"25 ./lcd.h
+[; ;./lcd.h: 25:  void lcdInit(void);
+[v _lcdInit `(v ~T0 @X0 0 ef ]
+"25 ./keypad.h
+[; ;./keypad.h: 25:  void kpInit(void);
+[v _kpInit `(v ~T0 @X0 0 ef ]
+"23 ./lcd.h
+[; ;./lcd.h: 23:  void lcdCommand(unsigned char cmd);
+[v _lcdCommand `(v ~T0 @X0 0 ef1`uc ]
+"24
+[; ;./lcd.h: 24:  void lcdData(unsigned char valor);
+[v _lcdData `(v ~T0 @X0 0 ef1`uc ]
+"26 ./atraso.h
+[; ;./atraso.h: 26: void atraso_ms(unsigned int valor);
+[v _atraso_ms `(v ~T0 @X0 0 ef1`ui ]
+"22 ./ssd.h
+[; ;./ssd.h: 22:  void ssdDigit(char val, char pos);
+[v _ssdDigit `(v ~T0 @X0 0 ef2`uc`uc ]
+"23
+[; ;./ssd.h: 23:  void ssdUpdate(void);
+[v _ssdUpdate `(v ~T0 @X0 0 ef ]
+"24 ./pwm.h
+[; ;./pwm.h: 24:  void pwmSet2(unsigned char porcento);
+[v _pwmSet2 `(v ~T0 @X0 0 ef1`uc ]
+"23
+[; ;./pwm.h: 23:  void pwmSet1(unsigned char porcento);
+[v _pwmSet1 `(v ~T0 @X0 0 ef1`uc ]
+"25 K_WEISSBIER.c
+[; ;K_WEISSBIER.c: 25: void Teclado();
+[v _Teclado `(v ~T0 @X0 0 e? ]
+"24 ./keypad.h
+[; ;./keypad.h: 24:  void kpDebounce(void);
+[v _kpDebounce `(v ~T0 @X0 0 ef ]
+"23
+[; ;./keypad.h: 23:  unsigned int kpRead(void);
+[v _kpRead `(ui ~T0 @X0 0 ef ]
+"26 ./config.h
+[p x OSC=HS                   ]
+"27
+[p x FCMEN  =  OFF ]
+"28
+[p x IESO  =  OFF ]
+"29
+[p x PWRT  =  OFF ]
+"30
+[p x BOREN  =  OFF ]
+"31
+[p x BORV  =  46 ]
+"32
+[p x WDT=OFF                  ]
+"33
+[p x WDTPS  =  1                ]
+"34
+[p x MCLRE=ON                 ]
+"35
+[p x LPT1OSC  =  OFF ]
+"36
+[p x PBADEN  =  ON ]
+"37
+[p x CCP2MX  =  PORTC ]
+"38
+[p x STVREN  =  OFF ]
+"39
+[p x LVP=OFF                  ]
+"40
+[p x XINST  =  OFF ]
+"41
+[p x DEBUG  =  OFF              ]
+"43
+[p x CP0  =  OFF ]
+"44
+[p x CP1  =  OFF ]
+"45
+[p x CP2  =  OFF ]
+"46
+[p x CP3  =  OFF ]
+"47
+[p x CPB  =  OFF ]
+"48
+[p x CPD  =  OFF ]
+"50
+[p x WRT0  =  OFF ]
+"51
+[p x WRT1  =  OFF ]
+"52
+[p x WRT2  =  OFF ]
+"53
+[p x WRT3  =  OFF ]
+"54
+[p x WRTB  =  OFF ]
+"55
+[p x WRTC  =  OFF ]
+"56
+[p x WRTD  =  OFF ]
+"58
+[p x EBTR0  =  OFF ]
+"59
+[p x EBTR1  =  OFF ]
+"60
+[p x EBTR2  =  OFF ]
+"61
+[p x EBTR3  =  OFF ]
+"62
+[p x EBTRB  =  OFF ]
+"19 K_WEISSBIER.c
+[; ;K_WEISSBIER.c: 19: unsigned int valor = 4300;
+[v _valor `ui ~T0 @X0 1 e ]
+[i _valor
+-> -> 4300 `i `ui
+]
+"20
+[; ;K_WEISSBIER.c: 20: unsigned int temp=0;
+[v _temp `ui ~T0 @X0 1 e ]
+[i _temp
+-> -> 0 `i `ui
+]
+"21
+[; ;K_WEISSBIER.c: 21: unsigned int cont = 0;
+[v _cont `ui ~T0 @X0 1 e ]
+[i _cont
+-> -> 0 `i `ui
+]
+"22
+[; ;K_WEISSBIER.c: 22: unsigned int i = 1;
+[v _i `ui ~T0 @X0 1 e ]
+[i _i
+-> -> 1 `i `ui
+]
+"23
+[; ;K_WEISSBIER.c: 23: unsigned int time = 0;
+[v _time `ui ~T0 @X0 1 e ]
+[i _time
+-> -> 0 `i `ui
+]
+"27
+[; ;K_WEISSBIER.c: 27: void k_weissbier(void) {
+[v _k_weissbier `(v ~T0 @X0 1 ef ]
+{
+[e :U _k_weissbier ]
+[f ]
+"31
+[; ;K_WEISSBIER.c: 31: char slot;
+[v _slot `uc ~T0 @X0 1 a ]
+"33
+[; ;K_WEISSBIER.c: 33: pwmInit();
+[e ( _pwmInit ..  ]
+"34
+[; ;K_WEISSBIER.c: 34: ssdInit();
+[e ( _ssdInit ..  ]
+"35
+[; ;K_WEISSBIER.c: 35: lcdInit();
+[e ( _lcdInit ..  ]
+"36
+[; ;K_WEISSBIER.c: 36: kpInit();
+[e ( _kpInit ..  ]
+"39
+[; ;K_WEISSBIER.c: 39:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"40
+[; ;K_WEISSBIER.c: 40:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"42
+[; ;K_WEISSBIER.c: 42:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"43
+[; ;K_WEISSBIER.c: 43:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"44
+[; ;K_WEISSBIER.c: 44:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"45
+[; ;K_WEISSBIER.c: 45:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"46
+[; ;K_WEISSBIER.c: 46:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"47
+[; ;K_WEISSBIER.c: 47:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"48
+[; ;K_WEISSBIER.c: 48:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"49
+[; ;K_WEISSBIER.c: 49:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"50
+[; ;K_WEISSBIER.c: 50:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"51
+[; ;K_WEISSBIER.c: 51:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"52
+[; ;K_WEISSBIER.c: 52:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"53
+[; ;K_WEISSBIER.c: 53:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"54
+[; ;K_WEISSBIER.c: 54:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"55
+[; ;K_WEISSBIER.c: 55:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"56
+[; ;K_WEISSBIER.c: 56:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"57
+[; ;K_WEISSBIER.c: 57:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"59
+[; ;K_WEISSBIER.c: 59:     lcdCommand(0xC4);
+[e ( _lcdCommand (1 -> -> 196 `i `uc ]
+"60
+[; ;K_WEISSBIER.c: 60:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"61
+[; ;K_WEISSBIER.c: 61:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"62
+[; ;K_WEISSBIER.c: 62:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"63
+[; ;K_WEISSBIER.c: 63:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"64
+[; ;K_WEISSBIER.c: 64:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"65
+[; ;K_WEISSBIER.c: 65:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"66
+[; ;K_WEISSBIER.c: 66:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"67
+[; ;K_WEISSBIER.c: 67:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"69
+[; ;K_WEISSBIER.c: 69:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"70
+[; ;K_WEISSBIER.c: 70:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"71
+[; ;K_WEISSBIER.c: 71:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"72
+[; ;K_WEISSBIER.c: 72:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"73
+[; ;K_WEISSBIER.c: 73:     lcdData('W');
+[e ( _lcdData (1 -> -> 87 `ui `uc ]
+"74
+[; ;K_WEISSBIER.c: 74:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"75
+[; ;K_WEISSBIER.c: 75:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"76
+[; ;K_WEISSBIER.c: 76:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"77
+[; ;K_WEISSBIER.c: 77:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"78
+[; ;K_WEISSBIER.c: 78:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"79
+[; ;K_WEISSBIER.c: 79:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"80
+[; ;K_WEISSBIER.c: 80:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"81
+[; ;K_WEISSBIER.c: 81:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"83
+[; ;K_WEISSBIER.c: 83:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"84
+[; ;K_WEISSBIER.c: 84:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"85
+[; ;K_WEISSBIER.c: 85:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"86
+[; ;K_WEISSBIER.c: 86:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"87
+[; ;K_WEISSBIER.c: 87:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"88
+[; ;K_WEISSBIER.c: 88:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"89
+[; ;K_WEISSBIER.c: 89:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"90
+[; ;K_WEISSBIER.c: 90:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"91
+[; ;K_WEISSBIER.c: 91:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"92
+[; ;K_WEISSBIER.c: 92:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"93
+[; ;K_WEISSBIER.c: 93:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"94
+[; ;K_WEISSBIER.c: 94:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"95
+[; ;K_WEISSBIER.c: 95:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"96
+[; ;K_WEISSBIER.c: 96:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"97
+[; ;K_WEISSBIER.c: 97:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"98
+[; ;K_WEISSBIER.c: 98:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"99
+[; ;K_WEISSBIER.c: 99:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"100
+[; ;K_WEISSBIER.c: 100:     atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"102
+[; ;K_WEISSBIER.c: 102:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"103
+[; ;K_WEISSBIER.c: 103:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"105
+[; ;K_WEISSBIER.c: 105:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"106
+[; ;K_WEISSBIER.c: 106:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"107
+[; ;K_WEISSBIER.c: 107:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"108
+[; ;K_WEISSBIER.c: 108:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"109
+[; ;K_WEISSBIER.c: 109:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"110
+[; ;K_WEISSBIER.c: 110:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"111
+[; ;K_WEISSBIER.c: 111:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"112
+[; ;K_WEISSBIER.c: 112:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"113
+[; ;K_WEISSBIER.c: 113:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"114
+[; ;K_WEISSBIER.c: 114:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"116
+[; ;K_WEISSBIER.c: 116:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"117
+[; ;K_WEISSBIER.c: 117:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"118
+[; ;K_WEISSBIER.c: 118:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"119
+[; ;K_WEISSBIER.c: 119:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"120
+[; ;K_WEISSBIER.c: 120:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"121
+[; ;K_WEISSBIER.c: 121:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"122
+[; ;K_WEISSBIER.c: 122:     lcdData('J');
+[e ( _lcdData (1 -> -> 74 `ui `uc ]
+"123
+[; ;K_WEISSBIER.c: 123:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"124
+[; ;K_WEISSBIER.c: 124:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"125
+[; ;K_WEISSBIER.c: 125:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"126
+[; ;K_WEISSBIER.c: 126:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"127
+[; ;K_WEISSBIER.c: 127:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"128
+[; ;K_WEISSBIER.c: 128:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"129
+[; ;K_WEISSBIER.c: 129:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"130
+[; ;K_WEISSBIER.c: 130:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"131
+[; ;K_WEISSBIER.c: 131:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"132
+[; ;K_WEISSBIER.c: 132:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"133
+[; ;K_WEISSBIER.c: 133:     atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"135
+[; ;K_WEISSBIER.c: 135:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"136
+[; ;K_WEISSBIER.c: 136:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"138
+[; ;K_WEISSBIER.c: 138:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"139
+[; ;K_WEISSBIER.c: 139:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"140
+[; ;K_WEISSBIER.c: 140:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"141
+[; ;K_WEISSBIER.c: 141:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"142
+[; ;K_WEISSBIER.c: 142:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"143
+[; ;K_WEISSBIER.c: 143:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"144
+[; ;K_WEISSBIER.c: 144:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"145
+[; ;K_WEISSBIER.c: 145:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"146
+[; ;K_WEISSBIER.c: 146:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"148
+[; ;K_WEISSBIER.c: 148:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"149
+[; ;K_WEISSBIER.c: 149:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"150
+[; ;K_WEISSBIER.c: 150:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"151
+[; ;K_WEISSBIER.c: 151:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"152
+[; ;K_WEISSBIER.c: 152:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"153
+[; ;K_WEISSBIER.c: 153:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"154
+[; ;K_WEISSBIER.c: 154:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"155
+[; ;K_WEISSBIER.c: 155:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"156
+[; ;K_WEISSBIER.c: 156:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"157
+[; ;K_WEISSBIER.c: 157:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"158
+[; ;K_WEISSBIER.c: 158:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"159
+[; ;K_WEISSBIER.c: 159:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"160
+[; ;K_WEISSBIER.c: 160:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"161
+[; ;K_WEISSBIER.c: 161:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"163
+[; ;K_WEISSBIER.c: 163:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"164
+[; ;K_WEISSBIER.c: 164:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"165
+[; ;K_WEISSBIER.c: 165:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"166
+[; ;K_WEISSBIER.c: 166:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"167
+[; ;K_WEISSBIER.c: 167:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"168
+[; ;K_WEISSBIER.c: 168:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"169
+[; ;K_WEISSBIER.c: 169:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"170
+[; ;K_WEISSBIER.c: 170:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"171
+[; ;K_WEISSBIER.c: 171:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"172
+[; ;K_WEISSBIER.c: 172:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"174
+[; ;K_WEISSBIER.c: 174:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"175
+[; ;K_WEISSBIER.c: 175:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"176
+[; ;K_WEISSBIER.c: 176:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"177
+[; ;K_WEISSBIER.c: 177:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"178
+[; ;K_WEISSBIER.c: 178:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"179
+[; ;K_WEISSBIER.c: 179:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"180
+[; ;K_WEISSBIER.c: 180:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"181
+[; ;K_WEISSBIER.c: 181:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"182
+[; ;K_WEISSBIER.c: 182:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"183
+[; ;K_WEISSBIER.c: 183:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"185
+[; ;K_WEISSBIER.c: 185:     atraso_ms(3000);
+[e ( _atraso_ms (1 -> -> 3000 `i `ui ]
+"187
+[; ;K_WEISSBIER.c: 187:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"188
+[; ;K_WEISSBIER.c: 188:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"189
+[; ;K_WEISSBIER.c: 189:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"190
+[; ;K_WEISSBIER.c: 190:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"191
+[; ;K_WEISSBIER.c: 191:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"192
+[; ;K_WEISSBIER.c: 192:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"193
+[; ;K_WEISSBIER.c: 193:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"194
+[; ;K_WEISSBIER.c: 194:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"195
+[; ;K_WEISSBIER.c: 195:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"196
+[; ;K_WEISSBIER.c: 196:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"197
+[; ;K_WEISSBIER.c: 197:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"199
+[; ;K_WEISSBIER.c: 199:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"200
+[; ;K_WEISSBIER.c: 200:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"201
+[; ;K_WEISSBIER.c: 201:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"202
+[; ;K_WEISSBIER.c: 202:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"203
+[; ;K_WEISSBIER.c: 203:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"204
+[; ;K_WEISSBIER.c: 204:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"205
+[; ;K_WEISSBIER.c: 205:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"206
+[; ;K_WEISSBIER.c: 206:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"207
+[; ;K_WEISSBIER.c: 207:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"208
+[; ;K_WEISSBIER.c: 208:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"209
+[; ;K_WEISSBIER.c: 209:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"210
+[; ;K_WEISSBIER.c: 210:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"211
+[; ;K_WEISSBIER.c: 211:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"212
+[; ;K_WEISSBIER.c: 212:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"213
+[; ;K_WEISSBIER.c: 213:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"214
+[; ;K_WEISSBIER.c: 214:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"215
+[; ;K_WEISSBIER.c: 215:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"217
+[; ;K_WEISSBIER.c: 217:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"218
+[; ;K_WEISSBIER.c: 218:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"219
+[; ;K_WEISSBIER.c: 219:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"220
+[; ;K_WEISSBIER.c: 220:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"221
+[; ;K_WEISSBIER.c: 221:     lcdData(',');
+[e ( _lcdData (1 -> -> 44 `ui `uc ]
+"222
+[; ;K_WEISSBIER.c: 222:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"223
+[; ;K_WEISSBIER.c: 223:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"224
+[; ;K_WEISSBIER.c: 224:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"225
+[; ;K_WEISSBIER.c: 225:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"227
+[; ;K_WEISSBIER.c: 227:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"228
+[; ;K_WEISSBIER.c: 228:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"229
+[; ;K_WEISSBIER.c: 229:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"230
+[; ;K_WEISSBIER.c: 230:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"231
+[; ;K_WEISSBIER.c: 231:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"232
+[; ;K_WEISSBIER.c: 232:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"234
+[; ;K_WEISSBIER.c: 234:      atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"236
+[; ;K_WEISSBIER.c: 236:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"237
+[; ;K_WEISSBIER.c: 237:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"238
+[; ;K_WEISSBIER.c: 238:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"239
+[; ;K_WEISSBIER.c: 239:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"240
+[; ;K_WEISSBIER.c: 240:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"241
+[; ;K_WEISSBIER.c: 241:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"242
+[; ;K_WEISSBIER.c: 242:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"243
+[; ;K_WEISSBIER.c: 243:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"244
+[; ;K_WEISSBIER.c: 244:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"245
+[; ;K_WEISSBIER.c: 245:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"246
+[; ;K_WEISSBIER.c: 246:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"248
+[; ;K_WEISSBIER.c: 248:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"249
+[; ;K_WEISSBIER.c: 249:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"250
+[; ;K_WEISSBIER.c: 250:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"251
+[; ;K_WEISSBIER.c: 251:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"252
+[; ;K_WEISSBIER.c: 252:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"253
+[; ;K_WEISSBIER.c: 253:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"255
+[; ;K_WEISSBIER.c: 255:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"256
+[; ;K_WEISSBIER.c: 256:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"257
+[; ;K_WEISSBIER.c: 257:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"258
+[; ;K_WEISSBIER.c: 258:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"259
+[; ;K_WEISSBIER.c: 259:     lcdData(',');
+[e ( _lcdData (1 -> -> 44 `ui `uc ]
+"260
+[; ;K_WEISSBIER.c: 260:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"261
+[; ;K_WEISSBIER.c: 261:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"262
+[; ;K_WEISSBIER.c: 262:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"263
+[; ;K_WEISSBIER.c: 263:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"265
+[; ;K_WEISSBIER.c: 265:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"266
+[; ;K_WEISSBIER.c: 266:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"267
+[; ;K_WEISSBIER.c: 267:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"268
+[; ;K_WEISSBIER.c: 268:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"269
+[; ;K_WEISSBIER.c: 269:     lcdData('7');
+[e ( _lcdData (1 -> -> 55 `ui `uc ]
+"270
+[; ;K_WEISSBIER.c: 270:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"272
+[; ;K_WEISSBIER.c: 272:      atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"274
+[; ;K_WEISSBIER.c: 274:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"275
+[; ;K_WEISSBIER.c: 275:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"276
+[; ;K_WEISSBIER.c: 276:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"277
+[; ;K_WEISSBIER.c: 277:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"278
+[; ;K_WEISSBIER.c: 278:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"279
+[; ;K_WEISSBIER.c: 279:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"280
+[; ;K_WEISSBIER.c: 280:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"281
+[; ;K_WEISSBIER.c: 281:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"282
+[; ;K_WEISSBIER.c: 282:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"283
+[; ;K_WEISSBIER.c: 283:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"284
+[; ;K_WEISSBIER.c: 284:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"286
+[; ;K_WEISSBIER.c: 286:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"287
+[; ;K_WEISSBIER.c: 287:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"288
+[; ;K_WEISSBIER.c: 288:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"289
+[; ;K_WEISSBIER.c: 289:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"290
+[; ;K_WEISSBIER.c: 290:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"291
+[; ;K_WEISSBIER.c: 291:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"292
+[; ;K_WEISSBIER.c: 292:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"295
+[; ;K_WEISSBIER.c: 295:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"296
+[; ;K_WEISSBIER.c: 296:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"297
+[; ;K_WEISSBIER.c: 297:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"298
+[; ;K_WEISSBIER.c: 298:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"299
+[; ;K_WEISSBIER.c: 299:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"300
+[; ;K_WEISSBIER.c: 300:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"301
+[; ;K_WEISSBIER.c: 301:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"303
+[; ;K_WEISSBIER.c: 303:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"304
+[; ;K_WEISSBIER.c: 304:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"305
+[; ;K_WEISSBIER.c: 305:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"306
+[; ;K_WEISSBIER.c: 306:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"307
+[; ;K_WEISSBIER.c: 307:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"309
+[; ;K_WEISSBIER.c: 309:     atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"311
+[; ;K_WEISSBIER.c: 311:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"312
+[; ;K_WEISSBIER.c: 312:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"313
+[; ;K_WEISSBIER.c: 313:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"314
+[; ;K_WEISSBIER.c: 314:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"315
+[; ;K_WEISSBIER.c: 315:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"316
+[; ;K_WEISSBIER.c: 316:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"317
+[; ;K_WEISSBIER.c: 317:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"318
+[; ;K_WEISSBIER.c: 318:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"319
+[; ;K_WEISSBIER.c: 319:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"320
+[; ;K_WEISSBIER.c: 320:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"321
+[; ;K_WEISSBIER.c: 321:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"322
+[; ;K_WEISSBIER.c: 322:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"324
+[; ;K_WEISSBIER.c: 324:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"325
+[; ;K_WEISSBIER.c: 325:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"326
+[; ;K_WEISSBIER.c: 326:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"327
+[; ;K_WEISSBIER.c: 327:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"328
+[; ;K_WEISSBIER.c: 328:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"329
+[; ;K_WEISSBIER.c: 329:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"330
+[; ;K_WEISSBIER.c: 330:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"332
+[; ;K_WEISSBIER.c: 332:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"333
+[; ;K_WEISSBIER.c: 333:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"334
+[; ;K_WEISSBIER.c: 334:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"335
+[; ;K_WEISSBIER.c: 335:     lcdData('9');
+[e ( _lcdData (1 -> -> 57 `ui `uc ]
+"336
+[; ;K_WEISSBIER.c: 336:     lcdData(',');
+[e ( _lcdData (1 -> -> 44 `ui `uc ]
+"337
+[; ;K_WEISSBIER.c: 337:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"338
+[; ;K_WEISSBIER.c: 338:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"340
+[; ;K_WEISSBIER.c: 340:      atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"342
+[; ;K_WEISSBIER.c: 342:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"343
+[; ;K_WEISSBIER.c: 343:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"344
+[; ;K_WEISSBIER.c: 344:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"345
+[; ;K_WEISSBIER.c: 345:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"346
+[; ;K_WEISSBIER.c: 346:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"347
+[; ;K_WEISSBIER.c: 347:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"348
+[; ;K_WEISSBIER.c: 348:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"349
+[; ;K_WEISSBIER.c: 349:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"350
+[; ;K_WEISSBIER.c: 350:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"351
+[; ;K_WEISSBIER.c: 351:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"352
+[; ;K_WEISSBIER.c: 352:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"353
+[; ;K_WEISSBIER.c: 353:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"355
+[; ;K_WEISSBIER.c: 355:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"356
+[; ;K_WEISSBIER.c: 356:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"357
+[; ;K_WEISSBIER.c: 357:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"358
+[; ;K_WEISSBIER.c: 358:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"359
+[; ;K_WEISSBIER.c: 359:     lcdData('Z');
+[e ( _lcdData (1 -> -> 90 `ui `uc ]
+"362
+[; ;K_WEISSBIER.c: 362:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"363
+[; ;K_WEISSBIER.c: 363:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"364
+[; ;K_WEISSBIER.c: 364:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"365
+[; ;K_WEISSBIER.c: 365:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"366
+[; ;K_WEISSBIER.c: 366:     lcdData(',');
+[e ( _lcdData (1 -> -> 44 `ui `uc ]
+"367
+[; ;K_WEISSBIER.c: 367:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"368
+[; ;K_WEISSBIER.c: 368:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"370
+[; ;K_WEISSBIER.c: 370:      atraso_ms(3000);
+[e ( _atraso_ms (1 -> -> 3000 `i `ui ]
+"373
+[; ;K_WEISSBIER.c: 373:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"374
+[; ;K_WEISSBIER.c: 374:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"375
+[; ;K_WEISSBIER.c: 375:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"376
+[; ;K_WEISSBIER.c: 376:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"377
+[; ;K_WEISSBIER.c: 377:     lcdData('Q');
+[e ( _lcdData (1 -> -> 81 `ui `uc ]
+"378
+[; ;K_WEISSBIER.c: 378:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"379
+[; ;K_WEISSBIER.c: 379:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"380
+[; ;K_WEISSBIER.c: 380:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"381
+[; ;K_WEISSBIER.c: 381:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"382
+[; ;K_WEISSBIER.c: 382:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"383
+[; ;K_WEISSBIER.c: 383:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"384
+[; ;K_WEISSBIER.c: 384:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"385
+[; ;K_WEISSBIER.c: 385:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"386
+[; ;K_WEISSBIER.c: 386:     lcdData('.');
+[e ( _lcdData (1 -> -> 46 `ui `uc ]
+"387
+[; ;K_WEISSBIER.c: 387:     lcdData('.');
+[e ( _lcdData (1 -> -> 46 `ui `uc ]
+"388
+[; ;K_WEISSBIER.c: 388:     lcdData('.');
+[e ( _lcdData (1 -> -> 46 `ui `uc ]
+"390
+[; ;K_WEISSBIER.c: 390: for (;;){
+{
+[e :U 2 ]
+{
+"391
+[; ;K_WEISSBIER.c: 391: switch (slot) {
+[e $U 6  ]
+{
+"392
+[; ;K_WEISSBIER.c: 392: case 0:
+[e :U 7 ]
+"393
+[; ;K_WEISSBIER.c: 393:  atraso_ms(1);
+[e ( _atraso_ms (1 -> -> 1 `i `ui ]
+"394
+[; ;K_WEISSBIER.c: 394:  temp++;
+[e ++ _temp -> -> 1 `i `ui ]
+"395
+[; ;K_WEISSBIER.c: 395:  ssdDigit(16 , 3);
+[e ( _ssdDigit (2 , -> -> 16 `i `uc -> -> 3 `i `uc ]
+"396
+[; ;K_WEISSBIER.c: 396:  ssdDigit((temp/100)%10 , 2);
+[e ( _ssdDigit (2 , -> % / _temp -> -> 100 `i `ui -> -> 10 `i `ui `uc -> -> 2 `i `uc ]
+"397
+[; ;K_WEISSBIER.c: 397:  ssdDigit((temp/1000)%10, 1);
+[e ( _ssdDigit (2 , -> % / _temp -> -> 1000 `i `ui -> -> 10 `i `ui `uc -> -> 1 `i `uc ]
+"398
+[; ;K_WEISSBIER.c: 398:  ssdUpdate();
+[e ( _ssdUpdate ..  ]
+"400
+[; ;K_WEISSBIER.c: 400: if(temp>= valor)
+[e $ ! >= _temp _valor 8  ]
+"401
+[; ;K_WEISSBIER.c: 401: {
+{
+"402
+[; ;K_WEISSBIER.c: 402:   slot = 1;
+[e = _slot -> -> 1 `i `uc ]
+"403
+[; ;K_WEISSBIER.c: 403: }
+}
+[e :U 8 ]
+"404
+[; ;K_WEISSBIER.c: 404: break;
+[e $U 5  ]
+"406
+[; ;K_WEISSBIER.c: 406: case 1:
+[e :U 9 ]
+"407
+[; ;K_WEISSBIER.c: 407:      cont++;
+[e ++ _cont -> -> 1 `i `ui ]
+"408
+[; ;K_WEISSBIER.c: 408:      temp = valor;
+[e = _temp _valor ]
+"409
+[; ;K_WEISSBIER.c: 409:      if((cont==1))
+[e $ ! == _cont -> -> 1 `i `ui 10  ]
+"410
+[; ;K_WEISSBIER.c: 410:      {
+{
+"412
+[; ;K_WEISSBIER.c: 412:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"413
+[; ;K_WEISSBIER.c: 413:      atraso_ms(100);
+[e ( _atraso_ms (1 -> -> 100 `i `ui ]
+"414
+[; ;K_WEISSBIER.c: 414:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"416
+[; ;K_WEISSBIER.c: 416:     if(valor<=4300){
+[e $ ! <= _valor -> -> 4300 `i `ui 11  ]
+{
+"417
+[; ;K_WEISSBIER.c: 417:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"418
+[; ;K_WEISSBIER.c: 418:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"419
+[; ;K_WEISSBIER.c: 419:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"420
+[; ;K_WEISSBIER.c: 420:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"421
+[; ;K_WEISSBIER.c: 421:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"422
+[; ;K_WEISSBIER.c: 422:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"423
+[; ;K_WEISSBIER.c: 423:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"424
+[; ;K_WEISSBIER.c: 424:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"425
+[; ;K_WEISSBIER.c: 425:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"426
+[; ;K_WEISSBIER.c: 426:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"427
+[; ;K_WEISSBIER.c: 427:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"428
+[; ;K_WEISSBIER.c: 428:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"429
+[; ;K_WEISSBIER.c: 429:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"430
+[; ;K_WEISSBIER.c: 430:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"431
+[; ;K_WEISSBIER.c: 431:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"432
+[; ;K_WEISSBIER.c: 432:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"433
+[; ;K_WEISSBIER.c: 433:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"434
+[; ;K_WEISSBIER.c: 434:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"435
+[; ;K_WEISSBIER.c: 435:     lcdCommand(0xDB);
+[e ( _lcdCommand (1 -> -> 219 `i `uc ]
+"436
+[; ;K_WEISSBIER.c: 436:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"437
+[; ;K_WEISSBIER.c: 437:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"438
+[; ;K_WEISSBIER.c: 438:     lcdData('(');
+[e ( _lcdData (1 -> -> 40 `ui `uc ]
+"439
+[; ;K_WEISSBIER.c: 439:     lcdData('#');
+[e ( _lcdData (1 -> -> 35 `ui `uc ]
+"440
+[; ;K_WEISSBIER.c: 440:     lcdData(')');
+[e ( _lcdData (1 -> -> 41 `ui `uc ]
+"441
+[; ;K_WEISSBIER.c: 441:      }
+}
+[e :U 11 ]
+"443
+[; ;K_WEISSBIER.c: 443:      if((valor<=(4300 +2))&&( valor > 4300))
+[e $ ! && <= _valor -> + -> 4300 `i -> 2 `i `ui > _valor -> -> 4300 `i `ui 12  ]
+"444
+[; ;K_WEISSBIER.c: 444:     {
+{
+"445
+[; ;K_WEISSBIER.c: 445:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"446
+[; ;K_WEISSBIER.c: 446:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"447
+[; ;K_WEISSBIER.c: 447:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"448
+[; ;K_WEISSBIER.c: 448:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"449
+[; ;K_WEISSBIER.c: 449:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"450
+[; ;K_WEISSBIER.c: 450:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"451
+[; ;K_WEISSBIER.c: 451:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"452
+[; ;K_WEISSBIER.c: 452:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"453
+[; ;K_WEISSBIER.c: 453:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"454
+[; ;K_WEISSBIER.c: 454:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"455
+[; ;K_WEISSBIER.c: 455:      valor = 4300 + 2;
+[e = _valor -> + -> 4300 `i -> 2 `i `ui ]
+"456
+[; ;K_WEISSBIER.c: 456:     }
+}
+[e :U 12 ]
+"458
+[; ;K_WEISSBIER.c: 458:      if((valor<=7800)&&( valor > (4300 +2)))
+[e $ ! && <= _valor -> -> 7800 `i `ui > _valor -> + -> 4300 `i -> 2 `i `ui 13  ]
+"459
+[; ;K_WEISSBIER.c: 459:     {
+{
+"460
+[; ;K_WEISSBIER.c: 460:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"461
+[; ;K_WEISSBIER.c: 461:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"462
+[; ;K_WEISSBIER.c: 462:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"463
+[; ;K_WEISSBIER.c: 463:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"464
+[; ;K_WEISSBIER.c: 464:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"465
+[; ;K_WEISSBIER.c: 465:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"466
+[; ;K_WEISSBIER.c: 466:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"467
+[; ;K_WEISSBIER.c: 467:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"468
+[; ;K_WEISSBIER.c: 468:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"469
+[; ;K_WEISSBIER.c: 469:     lcdData(i + 0x30);
+[e ( _lcdData (1 -> + _i -> -> 48 `i `ui `uc ]
+"470
+[; ;K_WEISSBIER.c: 470:     }
+}
+[e :U 13 ]
+"472
+[; ;K_WEISSBIER.c: 472:      if((i==5)&&(valor<=9900))
+[e $ ! && == _i -> -> 5 `i `ui <= _valor -> -> 9900 `i `ui 14  ]
+"473
+[; ;K_WEISSBIER.c: 473:     {
+{
+"474
+[; ;K_WEISSBIER.c: 474:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"475
+[; ;K_WEISSBIER.c: 475:     lcdCommand(0x85);
+[e ( _lcdCommand (1 -> -> 133 `i `uc ]
+"476
+[; ;K_WEISSBIER.c: 476:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"477
+[; ;K_WEISSBIER.c: 477:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"478
+[; ;K_WEISSBIER.c: 478:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"479
+[; ;K_WEISSBIER.c: 479:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"480
+[; ;K_WEISSBIER.c: 480:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"481
+[; ;K_WEISSBIER.c: 481:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"482
+[; ;K_WEISSBIER.c: 482:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"483
+[; ;K_WEISSBIER.c: 483:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"484
+[; ;K_WEISSBIER.c: 484:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"485
+[; ;K_WEISSBIER.c: 485:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"486
+[; ;K_WEISSBIER.c: 486:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"487
+[; ;K_WEISSBIER.c: 487:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"488
+[; ;K_WEISSBIER.c: 488:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"489
+[; ;K_WEISSBIER.c: 489:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"490
+[; ;K_WEISSBIER.c: 490:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"491
+[; ;K_WEISSBIER.c: 491:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"492
+[; ;K_WEISSBIER.c: 492:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"493
+[; ;K_WEISSBIER.c: 493:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"494
+[; ;K_WEISSBIER.c: 494:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"495
+[; ;K_WEISSBIER.c: 495:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"496
+[; ;K_WEISSBIER.c: 496:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"497
+[; ;K_WEISSBIER.c: 497:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"498
+[; ;K_WEISSBIER.c: 498:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"499
+[; ;K_WEISSBIER.c: 499:     lcdCommand(0xDB);
+[e ( _lcdCommand (1 -> -> 219 `i `uc ]
+"500
+[; ;K_WEISSBIER.c: 500:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"501
+[; ;K_WEISSBIER.c: 501:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"502
+[; ;K_WEISSBIER.c: 502:     lcdData('(');
+[e ( _lcdData (1 -> -> 40 `ui `uc ]
+"503
+[; ;K_WEISSBIER.c: 503:     lcdData('#');
+[e ( _lcdData (1 -> -> 35 `ui `uc ]
+"504
+[; ;K_WEISSBIER.c: 504:     lcdData(')');
+[e ( _lcdData (1 -> -> 41 `ui `uc ]
+"505
+[; ;K_WEISSBIER.c: 505:      pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"506
+[; ;K_WEISSBIER.c: 506:      i = 9;
+[e = _i -> -> 9 `i `ui ]
+"508
+[; ;K_WEISSBIER.c: 508:     }
+}
+[e :U 14 ]
+"510
+[; ;K_WEISSBIER.c: 510:      if((i==6)||(i==8))
+[e $ ! || == _i -> -> 6 `i `ui == _i -> -> 8 `i `ui 15  ]
+"511
+[; ;K_WEISSBIER.c: 511:     {
+{
+"512
+[; ;K_WEISSBIER.c: 512:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"513
+[; ;K_WEISSBIER.c: 513:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"514
+[; ;K_WEISSBIER.c: 514:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"515
+[; ;K_WEISSBIER.c: 515:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"516
+[; ;K_WEISSBIER.c: 516:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"517
+[; ;K_WEISSBIER.c: 517:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"518
+[; ;K_WEISSBIER.c: 518:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"519
+[; ;K_WEISSBIER.c: 519:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"520
+[; ;K_WEISSBIER.c: 520:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"522
+[; ;K_WEISSBIER.c: 522:     if(i==8)
+[e $ ! == _i -> -> 8 `i `ui 16  ]
+"523
+[; ;K_WEISSBIER.c: 523:     {
+{
+"524
+[; ;K_WEISSBIER.c: 524:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"525
+[; ;K_WEISSBIER.c: 525:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"527
+[; ;K_WEISSBIER.c: 527:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"528
+[; ;K_WEISSBIER.c: 528:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"529
+[; ;K_WEISSBIER.c: 529:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"530
+[; ;K_WEISSBIER.c: 530:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"531
+[; ;K_WEISSBIER.c: 531:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"532
+[; ;K_WEISSBIER.c: 532:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"533
+[; ;K_WEISSBIER.c: 533:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"534
+[; ;K_WEISSBIER.c: 534:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"535
+[; ;K_WEISSBIER.c: 535:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"536
+[; ;K_WEISSBIER.c: 536:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"537
+[; ;K_WEISSBIER.c: 537:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"538
+[; ;K_WEISSBIER.c: 538:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"539
+[; ;K_WEISSBIER.c: 539:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"540
+[; ;K_WEISSBIER.c: 540:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"541
+[; ;K_WEISSBIER.c: 541:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"542
+[; ;K_WEISSBIER.c: 542:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"544
+[; ;K_WEISSBIER.c: 544:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"545
+[; ;K_WEISSBIER.c: 545:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"546
+[; ;K_WEISSBIER.c: 546:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"547
+[; ;K_WEISSBIER.c: 547:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"548
+[; ;K_WEISSBIER.c: 548:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"549
+[; ;K_WEISSBIER.c: 549:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"550
+[; ;K_WEISSBIER.c: 550:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"551
+[; ;K_WEISSBIER.c: 551:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"552
+[; ;K_WEISSBIER.c: 552:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"553
+[; ;K_WEISSBIER.c: 553:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"554
+[; ;K_WEISSBIER.c: 554:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"555
+[; ;K_WEISSBIER.c: 555:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"556
+[; ;K_WEISSBIER.c: 556:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"557
+[; ;K_WEISSBIER.c: 557:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"558
+[; ;K_WEISSBIER.c: 558:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"559
+[; ;K_WEISSBIER.c: 559:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"560
+[; ;K_WEISSBIER.c: 560:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"563
+[; ;K_WEISSBIER.c: 563:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"564
+[; ;K_WEISSBIER.c: 564:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"565
+[; ;K_WEISSBIER.c: 565:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"566
+[; ;K_WEISSBIER.c: 566:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"567
+[; ;K_WEISSBIER.c: 567:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"568
+[; ;K_WEISSBIER.c: 568:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"569
+[; ;K_WEISSBIER.c: 569:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"570
+[; ;K_WEISSBIER.c: 570:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"571
+[; ;K_WEISSBIER.c: 571:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"572
+[; ;K_WEISSBIER.c: 572:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"573
+[; ;K_WEISSBIER.c: 573:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"574
+[; ;K_WEISSBIER.c: 574:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"575
+[; ;K_WEISSBIER.c: 575:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"576
+[; ;K_WEISSBIER.c: 576:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"577
+[; ;K_WEISSBIER.c: 577:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"578
+[; ;K_WEISSBIER.c: 578:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"579
+[; ;K_WEISSBIER.c: 579:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"580
+[; ;K_WEISSBIER.c: 580:     valor = 2500;
+[e = _valor -> -> 2500 `i `ui ]
+"582
+[; ;K_WEISSBIER.c: 582:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"583
+[; ;K_WEISSBIER.c: 583:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"584
+[; ;K_WEISSBIER.c: 584:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"585
+[; ;K_WEISSBIER.c: 585:      atraso_ms(200);
+[e ( _atraso_ms (1 -> -> 200 `i `ui ]
+"586
+[; ;K_WEISSBIER.c: 586:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"587
+[; ;K_WEISSBIER.c: 587:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"588
+[; ;K_WEISSBIER.c: 588:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"589
+[; ;K_WEISSBIER.c: 589:      atraso_ms(200);
+[e ( _atraso_ms (1 -> -> 200 `i `ui ]
+"590
+[; ;K_WEISSBIER.c: 590:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"591
+[; ;K_WEISSBIER.c: 591:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"592
+[; ;K_WEISSBIER.c: 592:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"593
+[; ;K_WEISSBIER.c: 593:      atraso_ms(200);
+[e ( _atraso_ms (1 -> -> 200 `i `ui ]
+"594
+[; ;K_WEISSBIER.c: 594:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"595
+[; ;K_WEISSBIER.c: 595:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"596
+[; ;K_WEISSBIER.c: 596:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"597
+[; ;K_WEISSBIER.c: 597:     }
+}
+[e :U 16 ]
+"599
+[; ;K_WEISSBIER.c: 599:     }
+}
+[e :U 15 ]
+"600
+[; ;K_WEISSBIER.c: 600:      if((i==7)&&(valor<=9900))
+[e $ ! && == _i -> -> 7 `i `ui <= _valor -> -> 9900 `i `ui 17  ]
+"601
+[; ;K_WEISSBIER.c: 601:     {
+{
+"602
+[; ;K_WEISSBIER.c: 602:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"603
+[; ;K_WEISSBIER.c: 603:     lcdCommand(0x85);
+[e ( _lcdCommand (1 -> -> 133 `i `uc ]
+"604
+[; ;K_WEISSBIER.c: 604:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"605
+[; ;K_WEISSBIER.c: 605:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"606
+[; ;K_WEISSBIER.c: 606:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"607
+[; ;K_WEISSBIER.c: 607:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"608
+[; ;K_WEISSBIER.c: 608:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"609
+[; ;K_WEISSBIER.c: 609:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"610
+[; ;K_WEISSBIER.c: 610:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"611
+[; ;K_WEISSBIER.c: 611:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"612
+[; ;K_WEISSBIER.c: 612:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"613
+[; ;K_WEISSBIER.c: 613:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"614
+[; ;K_WEISSBIER.c: 614:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"615
+[; ;K_WEISSBIER.c: 615:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"616
+[; ;K_WEISSBIER.c: 616:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"617
+[; ;K_WEISSBIER.c: 617:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"618
+[; ;K_WEISSBIER.c: 618:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"619
+[; ;K_WEISSBIER.c: 619:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"620
+[; ;K_WEISSBIER.c: 620:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"621
+[; ;K_WEISSBIER.c: 621:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"622
+[; ;K_WEISSBIER.c: 622:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"623
+[; ;K_WEISSBIER.c: 623:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"624
+[; ;K_WEISSBIER.c: 624:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"625
+[; ;K_WEISSBIER.c: 625:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"626
+[; ;K_WEISSBIER.c: 626:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"627
+[; ;K_WEISSBIER.c: 627:     lcdCommand(0xDB);
+[e ( _lcdCommand (1 -> -> 219 `i `uc ]
+"628
+[; ;K_WEISSBIER.c: 628:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"629
+[; ;K_WEISSBIER.c: 629:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"630
+[; ;K_WEISSBIER.c: 630:     lcdData('(');
+[e ( _lcdData (1 -> -> 40 `ui `uc ]
+"631
+[; ;K_WEISSBIER.c: 631:     lcdData('#');
+[e ( _lcdData (1 -> -> 35 `ui `uc ]
+"632
+[; ;K_WEISSBIER.c: 632:     lcdData(')');
+[e ( _lcdData (1 -> -> 41 `ui `uc ]
+"633
+[; ;K_WEISSBIER.c: 633:      pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"634
+[; ;K_WEISSBIER.c: 634:      i = 10;
+[e = _i -> -> 10 `i `ui ]
+"636
+[; ;K_WEISSBIER.c: 636:     }
+}
+[e :U 17 ]
+"637
+[; ;K_WEISSBIER.c: 637:      }
+}
+[e :U 10 ]
+"639
+[; ;K_WEISSBIER.c: 639:      Teclado();
+[e ( _Teclado ..  ]
+"640
+[; ;K_WEISSBIER.c: 640:      kpDebounce();
+[e ( _kpDebounce ..  ]
+"642
+[; ;K_WEISSBIER.c: 642:      slot = 2;
+[e = _slot -> -> 2 `i `uc ]
+"643
+[; ;K_WEISSBIER.c: 643:      break;
+[e $U 5  ]
+"645
+[; ;K_WEISSBIER.c: 645: case 2:
+[e :U 18 ]
+"646
+[; ;K_WEISSBIER.c: 646:     if((valor >= (4300 +1))&&(i < 9))
+[e $ ! && >= _valor -> + -> 4300 `i -> 1 `i `ui < _i -> -> 9 `i `ui 19  ]
+"647
+[; ;K_WEISSBIER.c: 647:     {
+{
+"649
+[; ;K_WEISSBIER.c: 649:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"650
+[; ;K_WEISSBIER.c: 650:     lcdData((time/1000)%10 + '0');
+[e ( _lcdData (1 -> + % / _time -> -> 1000 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+"651
+[; ;K_WEISSBIER.c: 651:     lcdData((time/100)%10 + '0');
+[e ( _lcdData (1 -> + % / _time -> -> 100 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+"652
+[; ;K_WEISSBIER.c: 652:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"653
+[; ;K_WEISSBIER.c: 653:     lcdData('m');
+[e ( _lcdData (1 -> -> 109 `ui `uc ]
+"654
+[; ;K_WEISSBIER.c: 654:     lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"655
+[; ;K_WEISSBIER.c: 655:     lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"657
+[; ;K_WEISSBIER.c: 657:     if(time != 0 )
+[e $ ! != _time -> -> 0 `i `ui 20  ]
+"658
+[; ;K_WEISSBIER.c: 658:     {
+{
+"659
+[; ;K_WEISSBIER.c: 659:       time --;
+[e -- _time -> -> 1 `i `ui ]
+"660
+[; ;K_WEISSBIER.c: 660:      }
+}
+[e $U 21  ]
+"662
+[; ;K_WEISSBIER.c: 662:     else
+[e :U 20 ]
+"663
+[; ;K_WEISSBIER.c: 663:     {
+{
+"664
+[; ;K_WEISSBIER.c: 664:         switch(valor)
+[e $U 23  ]
+"665
+[; ;K_WEISSBIER.c: 665:         {
+{
+"667
+[; ;K_WEISSBIER.c: 667:         case (4300 +1):
+[e :U 24 ]
+"668
+[; ;K_WEISSBIER.c: 668:             time = 2000;
+[e = _time -> -> 2000 `i `ui ]
+"669
+[; ;K_WEISSBIER.c: 669:             break;
+[e $U 22  ]
+"670
+[; ;K_WEISSBIER.c: 670:         case (4300 +2):
+[e :U 25 ]
+"671
+[; ;K_WEISSBIER.c: 671:         valor = 5200 ;
+[e = _valor -> -> 5200 `i `ui ]
+"672
+[; ;K_WEISSBIER.c: 672:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"673
+[; ;K_WEISSBIER.c: 673:         i=1;
+[e = _i -> -> 1 `i `ui ]
+"674
+[; ;K_WEISSBIER.c: 674:         time = 1500;
+[e = _time -> -> 1500 `i `ui ]
+"675
+[; ;K_WEISSBIER.c: 675:             break;
+[e $U 22  ]
+"676
+[; ;K_WEISSBIER.c: 676:         case 5200:
+[e :U 26 ]
+"677
+[; ;K_WEISSBIER.c: 677:         valor = 6500 ;
+[e = _valor -> -> 6500 `i `ui ]
+"678
+[; ;K_WEISSBIER.c: 678:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"679
+[; ;K_WEISSBIER.c: 679:         i=2;
+[e = _i -> -> 2 `i `ui ]
+"680
+[; ;K_WEISSBIER.c: 680:         time = 4000;
+[e = _time -> -> 4000 `i `ui ]
+"681
+[; ;K_WEISSBIER.c: 681:             break;
+[e $U 22  ]
+"682
+[; ;K_WEISSBIER.c: 682:         case 6500:
+[e :U 27 ]
+"683
+[; ;K_WEISSBIER.c: 683:         valor = 7200 ;
+[e = _valor -> -> 7200 `i `ui ]
+"684
+[; ;K_WEISSBIER.c: 684:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"685
+[; ;K_WEISSBIER.c: 685:         i=3;
+[e = _i -> -> 3 `i `ui ]
+"686
+[; ;K_WEISSBIER.c: 686:         time = 2000;
+[e = _time -> -> 2000 `i `ui ]
+"687
+[; ;K_WEISSBIER.c: 687:             break;
+[e $U 22  ]
+"688
+[; ;K_WEISSBIER.c: 688:         case 7200:
+[e :U 28 ]
+"689
+[; ;K_WEISSBIER.c: 689:         valor = 7800 ;
+[e = _valor -> -> 7800 `i `ui ]
+"690
+[; ;K_WEISSBIER.c: 690:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"691
+[; ;K_WEISSBIER.c: 691:         i=4;
+[e = _i -> -> 4 `i `ui ]
+"692
+[; ;K_WEISSBIER.c: 692:         time = 1000;
+[e = _time -> -> 1000 `i `ui ]
+"693
+[; ;K_WEISSBIER.c: 693:             break;
+[e $U 22  ]
+"694
+[; ;K_WEISSBIER.c: 694:         case 7800:
+[e :U 29 ]
+"695
+[; ;K_WEISSBIER.c: 695:         valor = 9900 ;
+[e = _valor -> -> 9900 `i `ui ]
+"696
+[; ;K_WEISSBIER.c: 696:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"697
+[; ;K_WEISSBIER.c: 697:         i=5;
+[e = _i -> -> 5 `i `ui ]
+"698
+[; ;K_WEISSBIER.c: 698:         time = 1100;
+[e = _time -> -> 1100 `i `ui ]
+"699
+[; ;K_WEISSBIER.c: 699:             break;
+[e $U 22  ]
+"700
+[; ;K_WEISSBIER.c: 700:         case 9900:
+[e :U 30 ]
+"701
+[; ;K_WEISSBIER.c: 701:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"702
+[; ;K_WEISSBIER.c: 702:         i=7;
+[e = _i -> -> 7 `i `ui ]
+"703
+[; ;K_WEISSBIER.c: 703:         time = 1000;
+[e = _time -> -> 1000 `i `ui ]
+"704
+[; ;K_WEISSBIER.c: 704:             break;
+[e $U 22  ]
+"705
+[; ;K_WEISSBIER.c: 705:         case (9900 +1):
+[e :U 31 ]
+"706
+[; ;K_WEISSBIER.c: 706:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"707
+[; ;K_WEISSBIER.c: 707:         i=8;
+[e = _i -> -> 8 `i `ui ]
+"708
+[; ;K_WEISSBIER.c: 708:             break;
+[e $U 22  ]
+"710
+[; ;K_WEISSBIER.c: 710:         }
+}
+[e $U 22  ]
+[e :U 23 ]
+[e [\ _valor , $ -> + -> 4300 `i -> 1 `i `ui 24
+ , $ -> + -> 4300 `i -> 2 `i `ui 25
+ , $ -> -> 5200 `i `ui 26
+ , $ -> -> 6500 `i `ui 27
+ , $ -> -> 7200 `i `ui 28
+ , $ -> -> 7800 `i `ui 29
+ , $ -> -> 9900 `i `ui 30
+ , $ -> + -> 9900 `i -> 1 `i `ui 31
+ 22 ]
+[e :U 22 ]
+"711
+[; ;K_WEISSBIER.c: 711:     }
+}
+[e :U 21 ]
+"713
+[; ;K_WEISSBIER.c: 713:    }
+}
+[e :U 19 ]
+"714
+[; ;K_WEISSBIER.c: 714:   slot = 0 ;
+[e = _slot -> -> 0 `i `uc ]
+"716
+[; ;K_WEISSBIER.c: 716:   break;
+[e $U 5  ]
+"718
+[; ;K_WEISSBIER.c: 718: default:
+[e :U 32 ]
+"719
+[; ;K_WEISSBIER.c: 719: slot = 0;
+[e = _slot -> -> 0 `i `uc ]
+"720
+[; ;K_WEISSBIER.c: 720: break;
+[e $U 5  ]
+"722
+[; ;K_WEISSBIER.c: 722:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _slot `i , $ -> 0 `i 7
+ , $ -> 1 `i 9
+ , $ -> 2 `i 18
+ 32 ]
+[e :U 5 ]
+"724
+[; ;K_WEISSBIER.c: 724:  }
+}
+[e $U 2  ]
+[e :U 3 ]
+}
+"726
+[; ;K_WEISSBIER.c: 726: }
+[e :UE 1 ]
+}
+"731
+[; ;K_WEISSBIER.c: 731: void Teclado() {
+[v _Teclado `(v ~T0 @X0 1 ef ]
+{
+[e :U _Teclado ]
+[f ]
+"732
+[; ;K_WEISSBIER.c: 732:   int t ;
+[v _t `i ~T0 @X0 1 a ]
+"734
+[; ;K_WEISSBIER.c: 734: lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"736
+[; ;K_WEISSBIER.c: 736: if(kpRead()!= t)
+[e $ ! != ( _kpRead ..  -> _t `ui 34  ]
+"737
+[; ;K_WEISSBIER.c: 737: {
+{
+"738
+[; ;K_WEISSBIER.c: 738:     t = kpRead() ;
+[e = _t -> ( _kpRead ..  `i ]
+"739
+[; ;K_WEISSBIER.c: 739: }
+}
+[e :U 34 ]
+"741
+[; ;K_WEISSBIER.c: 741: if((((kpRead()) & (1<<8)))&&(valor < (4300 +1)))
+[e $ ! && != & ( _kpRead ..  -> << -> 1 `i -> 8 `i `ui -> -> 0 `i `ui < _valor -> + -> 4300 `i -> 1 `i `ui 35  ]
+"742
+[; ;K_WEISSBIER.c: 742: {
+{
+"743
+[; ;K_WEISSBIER.c: 743:    lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"744
+[; ;K_WEISSBIER.c: 744:    lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"745
+[; ;K_WEISSBIER.c: 745:    lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"746
+[; ;K_WEISSBIER.c: 746:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"747
+[; ;K_WEISSBIER.c: 747:    lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"748
+[; ;K_WEISSBIER.c: 748:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"749
+[; ;K_WEISSBIER.c: 749:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"750
+[; ;K_WEISSBIER.c: 750:    lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"751
+[; ;K_WEISSBIER.c: 751:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"752
+[; ;K_WEISSBIER.c: 752:    lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"753
+[; ;K_WEISSBIER.c: 753:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"754
+[; ;K_WEISSBIER.c: 754:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"755
+[; ;K_WEISSBIER.c: 755:    lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"756
+[; ;K_WEISSBIER.c: 756:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"757
+[; ;K_WEISSBIER.c: 757:    lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"758
+[; ;K_WEISSBIER.c: 758:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"759
+[; ;K_WEISSBIER.c: 759:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"760
+[; ;K_WEISSBIER.c: 760:    pwmSet1(50);
+[e ( _pwmSet1 (1 -> -> 50 `i `uc ]
+"761
+[; ;K_WEISSBIER.c: 761:    valor = (4300 +1);
+[e = _valor -> + -> 4300 `i -> 1 `i `ui ]
+"762
+[; ;K_WEISSBIER.c: 762:    temp = (4300 +1);
+[e = _temp -> + -> 4300 `i -> 1 `i `ui ]
+"763
+[; ;K_WEISSBIER.c: 763:    cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"764
+[; ;K_WEISSBIER.c: 764:    atraso_ms(550);
+[e ( _atraso_ms (1 -> -> 550 `i `ui ]
+"765
+[; ;K_WEISSBIER.c: 765: }
+}
+[e :U 35 ]
+"767
+[; ;K_WEISSBIER.c: 767: if((i == 9 )&&(((kpRead()) & (1<<8))))
+[e $ ! && == _i -> -> 9 `i `ui != & ( _kpRead ..  -> << -> 1 `i -> 8 `i `ui -> -> 0 `i `ui 36  ]
+"768
+[; ;K_WEISSBIER.c: 768: {
+{
+"769
+[; ;K_WEISSBIER.c: 769:    lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"770
+[; ;K_WEISSBIER.c: 770:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"771
+[; ;K_WEISSBIER.c: 771:    lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"772
+[; ;K_WEISSBIER.c: 772:    lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"773
+[; ;K_WEISSBIER.c: 773:    lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"774
+[; ;K_WEISSBIER.c: 774:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"775
+[; ;K_WEISSBIER.c: 775:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"776
+[; ;K_WEISSBIER.c: 776:    lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"777
+[; ;K_WEISSBIER.c: 777:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"778
+[; ;K_WEISSBIER.c: 778:    lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"779
+[; ;K_WEISSBIER.c: 779:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"780
+[; ;K_WEISSBIER.c: 780:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"781
+[; ;K_WEISSBIER.c: 781:    lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"782
+[; ;K_WEISSBIER.c: 782:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"783
+[; ;K_WEISSBIER.c: 783:    lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"784
+[; ;K_WEISSBIER.c: 784:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"785
+[; ;K_WEISSBIER.c: 785:    cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"786
+[; ;K_WEISSBIER.c: 786:    i = 6;
+[e = _i -> -> 6 `i `ui ]
+"787
+[; ;K_WEISSBIER.c: 787:    atraso_ms(550);
+[e ( _atraso_ms (1 -> -> 550 `i `ui ]
+"788
+[; ;K_WEISSBIER.c: 788: }
+}
+[e :U 36 ]
+"790
+[; ;K_WEISSBIER.c: 790: if((i == 10 )&&(((kpRead()) & (1<<8))))
+[e $ ! && == _i -> -> 10 `i `ui != & ( _kpRead ..  -> << -> 1 `i -> 8 `i `ui -> -> 0 `i `ui 37  ]
+"791
+[; ;K_WEISSBIER.c: 791: {
+{
+"792
+[; ;K_WEISSBIER.c: 792:    lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"793
+[; ;K_WEISSBIER.c: 793:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"794
+[; ;K_WEISSBIER.c: 794:    lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"795
+[; ;K_WEISSBIER.c: 795:    lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"796
+[; ;K_WEISSBIER.c: 796:    lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"797
+[; ;K_WEISSBIER.c: 797:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"798
+[; ;K_WEISSBIER.c: 798:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"799
+[; ;K_WEISSBIER.c: 799:    lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"800
+[; ;K_WEISSBIER.c: 800:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"801
+[; ;K_WEISSBIER.c: 801:    lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"802
+[; ;K_WEISSBIER.c: 802:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"803
+[; ;K_WEISSBIER.c: 803:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"804
+[; ;K_WEISSBIER.c: 804:    lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"805
+[; ;K_WEISSBIER.c: 805:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"806
+[; ;K_WEISSBIER.c: 806:    lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"807
+[; ;K_WEISSBIER.c: 807:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"808
+[; ;K_WEISSBIER.c: 808:    cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"809
+[; ;K_WEISSBIER.c: 809:    i = 6;
+[e = _i -> -> 6 `i `ui ]
+"810
+[; ;K_WEISSBIER.c: 810:    valor = 9900 + 1;
+[e = _valor -> + -> 9900 `i -> 1 `i `ui ]
+"811
+[; ;K_WEISSBIER.c: 811:    atraso_ms(550);
+[e ( _atraso_ms (1 -> -> 550 `i `ui ]
+"812
+[; ;K_WEISSBIER.c: 812: }
+}
+[e :U 37 ]
+"814
+[; ;K_WEISSBIER.c: 814: }
+[e :UE 33 ]
+}

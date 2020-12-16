@@ -1,0 +1,2200 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"26 ./pwm.h
+[; ;./pwm.h: 26:  void pwmInit(void);
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"24 ./ssd.h
+[; ;./ssd.h: 24:  void ssdInit(void);
+[v _ssdInit `(v ~T0 @X0 0 ef ]
+"25 ./lcd.h
+[; ;./lcd.h: 25:  void lcdInit(void);
+[v _lcdInit `(v ~T0 @X0 0 ef ]
+"25 ./keypad.h
+[; ;./keypad.h: 25:  void kpInit(void);
+[v _kpInit `(v ~T0 @X0 0 ef ]
+"23 ./lcd.h
+[; ;./lcd.h: 23:  void lcdCommand(unsigned char cmd);
+[v _lcdCommand `(v ~T0 @X0 0 ef1`uc ]
+"24
+[; ;./lcd.h: 24:  void lcdData(unsigned char valor);
+[v _lcdData `(v ~T0 @X0 0 ef1`uc ]
+"26 ./atraso.h
+[; ;./atraso.h: 26: void atraso_ms(unsigned int valor);
+[v _atraso_ms `(v ~T0 @X0 0 ef1`ui ]
+"22 ./ssd.h
+[; ;./ssd.h: 22:  void ssdDigit(char val, char pos);
+[v _ssdDigit `(v ~T0 @X0 0 ef2`uc`uc ]
+"23
+[; ;./ssd.h: 23:  void ssdUpdate(void);
+[v _ssdUpdate `(v ~T0 @X0 0 ef ]
+"24 ./pwm.h
+[; ;./pwm.h: 24:  void pwmSet2(unsigned char porcento);
+[v _pwmSet2 `(v ~T0 @X0 0 ef1`uc ]
+"23
+[; ;./pwm.h: 23:  void pwmSet1(unsigned char porcento);
+[v _pwmSet1 `(v ~T0 @X0 0 ef1`uc ]
+"22 AMBER_LAGER.c
+[; ;AMBER_LAGER.c: 22: void Tecl();
+[v _Tecl `(v ~T0 @X0 0 e? ]
+"24 ./keypad.h
+[; ;./keypad.h: 24:  void kpDebounce(void);
+[v _kpDebounce `(v ~T0 @X0 0 ef ]
+"23
+[; ;./keypad.h: 23:  unsigned int kpRead(void);
+[v _kpRead `(ui ~T0 @X0 0 ef ]
+"26 ./config.h
+[p x OSC=HS                   ]
+"27
+[p x FCMEN  =  OFF ]
+"28
+[p x IESO  =  OFF ]
+"29
+[p x PWRT  =  OFF ]
+"30
+[p x BOREN  =  OFF ]
+"31
+[p x BORV  =  46 ]
+"32
+[p x WDT=OFF                  ]
+"33
+[p x WDTPS  =  1                ]
+"34
+[p x MCLRE=ON                 ]
+"35
+[p x LPT1OSC  =  OFF ]
+"36
+[p x PBADEN  =  ON ]
+"37
+[p x CCP2MX  =  PORTC ]
+"38
+[p x STVREN  =  OFF ]
+"39
+[p x LVP=OFF                  ]
+"40
+[p x XINST  =  OFF ]
+"41
+[p x DEBUG  =  OFF              ]
+"43
+[p x CP0  =  OFF ]
+"44
+[p x CP1  =  OFF ]
+"45
+[p x CP2  =  OFF ]
+"46
+[p x CP3  =  OFF ]
+"47
+[p x CPB  =  OFF ]
+"48
+[p x CPD  =  OFF ]
+"50
+[p x WRT0  =  OFF ]
+"51
+[p x WRT1  =  OFF ]
+"52
+[p x WRT2  =  OFF ]
+"53
+[p x WRT3  =  OFF ]
+"54
+[p x WRTB  =  OFF ]
+"55
+[p x WRTC  =  OFF ]
+"56
+[p x WRTD  =  OFF ]
+"58
+[p x EBTR0  =  OFF ]
+"59
+[p x EBTR1  =  OFF ]
+"60
+[p x EBTR2  =  OFF ]
+"61
+[p x EBTR3  =  OFF ]
+"62
+[p x EBTRB  =  OFF ]
+"16 AMBER_LAGER.c
+[; ;AMBER_LAGER.c: 16: unsigned int vlr = 6700;
+[v _vlr `ui ~T0 @X0 1 e ]
+[i _vlr
+-> -> 6700 `i `ui
+]
+"17
+[; ;AMBER_LAGER.c: 17: unsigned int tmp=0;
+[v _tmp `ui ~T0 @X0 1 e ]
+[i _tmp
+-> -> 0 `i `ui
+]
+"18
+[; ;AMBER_LAGER.c: 18: unsigned int cont = 0;
+[v _cont `ui ~T0 @X0 1 e ]
+[i _cont
+-> -> 0 `i `ui
+]
+"19
+[; ;AMBER_LAGER.c: 19: unsigned int i = 1;
+[v _i `ui ~T0 @X0 1 e ]
+[i _i
+-> -> 1 `i `ui
+]
+"20
+[; ;AMBER_LAGER.c: 20: unsigned int time = 0;
+[v _time `ui ~T0 @X0 1 e ]
+[i _time
+-> -> 0 `i `ui
+]
+"24
+[; ;AMBER_LAGER.c: 24: void amber_lager(void) {
+[v _amber_lager `(v ~T0 @X0 1 ef ]
+{
+[e :U _amber_lager ]
+[f ]
+"28
+[; ;AMBER_LAGER.c: 28: char slot;
+[v _slot `uc ~T0 @X0 1 a ]
+"30
+[; ;AMBER_LAGER.c: 30: pwmInit();
+[e ( _pwmInit ..  ]
+"31
+[; ;AMBER_LAGER.c: 31: ssdInit();
+[e ( _ssdInit ..  ]
+"32
+[; ;AMBER_LAGER.c: 32: lcdInit();
+[e ( _lcdInit ..  ]
+"33
+[; ;AMBER_LAGER.c: 33: kpInit();
+[e ( _kpInit ..  ]
+"36
+[; ;AMBER_LAGER.c: 36:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"37
+[; ;AMBER_LAGER.c: 37:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"39
+[; ;AMBER_LAGER.c: 39:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"40
+[; ;AMBER_LAGER.c: 40:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"41
+[; ;AMBER_LAGER.c: 41:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"42
+[; ;AMBER_LAGER.c: 42:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"43
+[; ;AMBER_LAGER.c: 43:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"44
+[; ;AMBER_LAGER.c: 44:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"45
+[; ;AMBER_LAGER.c: 45:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"46
+[; ;AMBER_LAGER.c: 46:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"47
+[; ;AMBER_LAGER.c: 47:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"48
+[; ;AMBER_LAGER.c: 48:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"49
+[; ;AMBER_LAGER.c: 49:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"50
+[; ;AMBER_LAGER.c: 50:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"51
+[; ;AMBER_LAGER.c: 51:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"52
+[; ;AMBER_LAGER.c: 52:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"53
+[; ;AMBER_LAGER.c: 53:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"54
+[; ;AMBER_LAGER.c: 54:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"56
+[; ;AMBER_LAGER.c: 56:     lcdCommand(0xC5);
+[e ( _lcdCommand (1 -> -> 197 `i `uc ]
+"57
+[; ;AMBER_LAGER.c: 57:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"58
+[; ;AMBER_LAGER.c: 58:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"59
+[; ;AMBER_LAGER.c: 59:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"60
+[; ;AMBER_LAGER.c: 60:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"61
+[; ;AMBER_LAGER.c: 61:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"63
+[; ;AMBER_LAGER.c: 63:     lcdCommand(0xAD);
+[e ( _lcdCommand (1 -> -> 173 `i `uc ]
+"64
+[; ;AMBER_LAGER.c: 64:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"65
+[; ;AMBER_LAGER.c: 65:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"66
+[; ;AMBER_LAGER.c: 66:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"67
+[; ;AMBER_LAGER.c: 67:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"68
+[; ;AMBER_LAGER.c: 68:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"71
+[; ;AMBER_LAGER.c: 71:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"72
+[; ;AMBER_LAGER.c: 72:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"73
+[; ;AMBER_LAGER.c: 73:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"74
+[; ;AMBER_LAGER.c: 74:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"75
+[; ;AMBER_LAGER.c: 75:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"76
+[; ;AMBER_LAGER.c: 76:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"77
+[; ;AMBER_LAGER.c: 77:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"78
+[; ;AMBER_LAGER.c: 78:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"79
+[; ;AMBER_LAGER.c: 79:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"80
+[; ;AMBER_LAGER.c: 80:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"81
+[; ;AMBER_LAGER.c: 81:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"82
+[; ;AMBER_LAGER.c: 82:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"83
+[; ;AMBER_LAGER.c: 83:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"84
+[; ;AMBER_LAGER.c: 84:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"85
+[; ;AMBER_LAGER.c: 85:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"86
+[; ;AMBER_LAGER.c: 86:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"87
+[; ;AMBER_LAGER.c: 87:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"88
+[; ;AMBER_LAGER.c: 88:     atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"90
+[; ;AMBER_LAGER.c: 90:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"91
+[; ;AMBER_LAGER.c: 91:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"93
+[; ;AMBER_LAGER.c: 93:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"94
+[; ;AMBER_LAGER.c: 94:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"95
+[; ;AMBER_LAGER.c: 95:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"96
+[; ;AMBER_LAGER.c: 96:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"97
+[; ;AMBER_LAGER.c: 97:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"98
+[; ;AMBER_LAGER.c: 98:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"99
+[; ;AMBER_LAGER.c: 99:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"100
+[; ;AMBER_LAGER.c: 100:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"101
+[; ;AMBER_LAGER.c: 101:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"102
+[; ;AMBER_LAGER.c: 102:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"104
+[; ;AMBER_LAGER.c: 104:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"105
+[; ;AMBER_LAGER.c: 105:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"106
+[; ;AMBER_LAGER.c: 106:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"107
+[; ;AMBER_LAGER.c: 107:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"108
+[; ;AMBER_LAGER.c: 108:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"109
+[; ;AMBER_LAGER.c: 109:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"110
+[; ;AMBER_LAGER.c: 110:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"111
+[; ;AMBER_LAGER.c: 111:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"112
+[; ;AMBER_LAGER.c: 112:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"113
+[; ;AMBER_LAGER.c: 113:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"114
+[; ;AMBER_LAGER.c: 114:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"115
+[; ;AMBER_LAGER.c: 115:     lcdData('H');
+[e ( _lcdData (1 -> -> 72 `ui `uc ]
+"116
+[; ;AMBER_LAGER.c: 116:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"117
+[; ;AMBER_LAGER.c: 117:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"118
+[; ;AMBER_LAGER.c: 118:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"120
+[; ;AMBER_LAGER.c: 120:     atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"122
+[; ;AMBER_LAGER.c: 122:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"123
+[; ;AMBER_LAGER.c: 123:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"125
+[; ;AMBER_LAGER.c: 125:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"126
+[; ;AMBER_LAGER.c: 126:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"127
+[; ;AMBER_LAGER.c: 127:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"128
+[; ;AMBER_LAGER.c: 128:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"129
+[; ;AMBER_LAGER.c: 129:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"130
+[; ;AMBER_LAGER.c: 130:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"131
+[; ;AMBER_LAGER.c: 131:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"132
+[; ;AMBER_LAGER.c: 132:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"133
+[; ;AMBER_LAGER.c: 133:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"135
+[; ;AMBER_LAGER.c: 135:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"136
+[; ;AMBER_LAGER.c: 136:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"137
+[; ;AMBER_LAGER.c: 137:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"138
+[; ;AMBER_LAGER.c: 138:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"139
+[; ;AMBER_LAGER.c: 139:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"140
+[; ;AMBER_LAGER.c: 140:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"141
+[; ;AMBER_LAGER.c: 141:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"142
+[; ;AMBER_LAGER.c: 142:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"143
+[; ;AMBER_LAGER.c: 143:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"144
+[; ;AMBER_LAGER.c: 144:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"145
+[; ;AMBER_LAGER.c: 145:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"146
+[; ;AMBER_LAGER.c: 146:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"147
+[; ;AMBER_LAGER.c: 147:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"148
+[; ;AMBER_LAGER.c: 148:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"150
+[; ;AMBER_LAGER.c: 150:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"151
+[; ;AMBER_LAGER.c: 151:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"152
+[; ;AMBER_LAGER.c: 152:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"153
+[; ;AMBER_LAGER.c: 153:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"154
+[; ;AMBER_LAGER.c: 154:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"155
+[; ;AMBER_LAGER.c: 155:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"156
+[; ;AMBER_LAGER.c: 156:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"157
+[; ;AMBER_LAGER.c: 157:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"158
+[; ;AMBER_LAGER.c: 158:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"159
+[; ;AMBER_LAGER.c: 159:     lcdData(',');
+[e ( _lcdData (1 -> -> 44 `ui `uc ]
+"160
+[; ;AMBER_LAGER.c: 160:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"161
+[; ;AMBER_LAGER.c: 161:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"163
+[; ;AMBER_LAGER.c: 163:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"164
+[; ;AMBER_LAGER.c: 164:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"165
+[; ;AMBER_LAGER.c: 165:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"166
+[; ;AMBER_LAGER.c: 166:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"167
+[; ;AMBER_LAGER.c: 167:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"168
+[; ;AMBER_LAGER.c: 168:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"169
+[; ;AMBER_LAGER.c: 169:     lcdData(':');
+[e ( _lcdData (1 -> -> 58 `ui `uc ]
+"170
+[; ;AMBER_LAGER.c: 170:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"171
+[; ;AMBER_LAGER.c: 171:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"172
+[; ;AMBER_LAGER.c: 172:     lcdData('6');
+[e ( _lcdData (1 -> -> 54 `ui `uc ]
+"174
+[; ;AMBER_LAGER.c: 174:     atraso_ms(3000);
+[e ( _atraso_ms (1 -> -> 3000 `i `ui ]
+"176
+[; ;AMBER_LAGER.c: 176:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"177
+[; ;AMBER_LAGER.c: 177:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"178
+[; ;AMBER_LAGER.c: 178:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"179
+[; ;AMBER_LAGER.c: 179:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"180
+[; ;AMBER_LAGER.c: 180:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"181
+[; ;AMBER_LAGER.c: 181:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"182
+[; ;AMBER_LAGER.c: 182:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"183
+[; ;AMBER_LAGER.c: 183:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"184
+[; ;AMBER_LAGER.c: 184:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"185
+[; ;AMBER_LAGER.c: 185:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"186
+[; ;AMBER_LAGER.c: 186:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"188
+[; ;AMBER_LAGER.c: 188:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"189
+[; ;AMBER_LAGER.c: 189:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"190
+[; ;AMBER_LAGER.c: 190:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"191
+[; ;AMBER_LAGER.c: 191:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"192
+[; ;AMBER_LAGER.c: 192:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"193
+[; ;AMBER_LAGER.c: 193:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"194
+[; ;AMBER_LAGER.c: 194:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"195
+[; ;AMBER_LAGER.c: 195:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"196
+[; ;AMBER_LAGER.c: 196:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"197
+[; ;AMBER_LAGER.c: 197:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"198
+[; ;AMBER_LAGER.c: 198:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"199
+[; ;AMBER_LAGER.c: 199:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"200
+[; ;AMBER_LAGER.c: 200:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"201
+[; ;AMBER_LAGER.c: 201:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"202
+[; ;AMBER_LAGER.c: 202:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"203
+[; ;AMBER_LAGER.c: 203:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"206
+[; ;AMBER_LAGER.c: 206:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"207
+[; ;AMBER_LAGER.c: 207:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"208
+[; ;AMBER_LAGER.c: 208:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"209
+[; ;AMBER_LAGER.c: 209:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"210
+[; ;AMBER_LAGER.c: 210:     lcdData(',');
+[e ( _lcdData (1 -> -> 44 `ui `uc ]
+"211
+[; ;AMBER_LAGER.c: 211:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"212
+[; ;AMBER_LAGER.c: 212:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"213
+[; ;AMBER_LAGER.c: 213:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"215
+[; ;AMBER_LAGER.c: 215:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"216
+[; ;AMBER_LAGER.c: 216:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"217
+[; ;AMBER_LAGER.c: 217:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"218
+[; ;AMBER_LAGER.c: 218:     lcdData('7');
+[e ( _lcdData (1 -> -> 55 `ui `uc ]
+"219
+[; ;AMBER_LAGER.c: 219:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"220
+[; ;AMBER_LAGER.c: 220:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"222
+[; ;AMBER_LAGER.c: 222:      atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"224
+[; ;AMBER_LAGER.c: 224:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"225
+[; ;AMBER_LAGER.c: 225:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"226
+[; ;AMBER_LAGER.c: 226:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"227
+[; ;AMBER_LAGER.c: 227:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"228
+[; ;AMBER_LAGER.c: 228:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"229
+[; ;AMBER_LAGER.c: 229:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"230
+[; ;AMBER_LAGER.c: 230:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"231
+[; ;AMBER_LAGER.c: 231:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"232
+[; ;AMBER_LAGER.c: 232:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"233
+[; ;AMBER_LAGER.c: 233:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"234
+[; ;AMBER_LAGER.c: 234:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"236
+[; ;AMBER_LAGER.c: 236:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"237
+[; ;AMBER_LAGER.c: 237:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"238
+[; ;AMBER_LAGER.c: 238:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"239
+[; ;AMBER_LAGER.c: 239:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"240
+[; ;AMBER_LAGER.c: 240:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"241
+[; ;AMBER_LAGER.c: 241:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"242
+[; ;AMBER_LAGER.c: 242:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"243
+[; ;AMBER_LAGER.c: 243:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"244
+[; ;AMBER_LAGER.c: 244:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"245
+[; ;AMBER_LAGER.c: 245:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"246
+[; ;AMBER_LAGER.c: 246:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"247
+[; ;AMBER_LAGER.c: 247:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"249
+[; ;AMBER_LAGER.c: 249:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"250
+[; ;AMBER_LAGER.c: 250:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"251
+[; ;AMBER_LAGER.c: 251:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"252
+[; ;AMBER_LAGER.c: 252:     lcdData('6');
+[e ( _lcdData (1 -> -> 54 `ui `uc ]
+"253
+[; ;AMBER_LAGER.c: 253:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"254
+[; ;AMBER_LAGER.c: 254:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"255
+[; ;AMBER_LAGER.c: 255:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"257
+[; ;AMBER_LAGER.c: 257:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"258
+[; ;AMBER_LAGER.c: 258:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"259
+[; ;AMBER_LAGER.c: 259:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"260
+[; ;AMBER_LAGER.c: 260:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"261
+[; ;AMBER_LAGER.c: 261:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"262
+[; ;AMBER_LAGER.c: 262:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"264
+[; ;AMBER_LAGER.c: 264:      atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"266
+[; ;AMBER_LAGER.c: 266:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"267
+[; ;AMBER_LAGER.c: 267:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"268
+[; ;AMBER_LAGER.c: 268:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"269
+[; ;AMBER_LAGER.c: 269:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"270
+[; ;AMBER_LAGER.c: 270:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"271
+[; ;AMBER_LAGER.c: 271:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"272
+[; ;AMBER_LAGER.c: 272:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"273
+[; ;AMBER_LAGER.c: 273:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"274
+[; ;AMBER_LAGER.c: 274:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"275
+[; ;AMBER_LAGER.c: 275:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"276
+[; ;AMBER_LAGER.c: 276:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"278
+[; ;AMBER_LAGER.c: 278:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"279
+[; ;AMBER_LAGER.c: 279:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"280
+[; ;AMBER_LAGER.c: 280:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"281
+[; ;AMBER_LAGER.c: 281:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"282
+[; ;AMBER_LAGER.c: 282:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"283
+[; ;AMBER_LAGER.c: 283:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"284
+[; ;AMBER_LAGER.c: 284:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"285
+[; ;AMBER_LAGER.c: 285:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"287
+[; ;AMBER_LAGER.c: 287:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"288
+[; ;AMBER_LAGER.c: 288:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"289
+[; ;AMBER_LAGER.c: 289:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"290
+[; ;AMBER_LAGER.c: 290:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"291
+[; ;AMBER_LAGER.c: 291:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"292
+[; ;AMBER_LAGER.c: 292:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"293
+[; ;AMBER_LAGER.c: 293:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"295
+[; ;AMBER_LAGER.c: 295:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"296
+[; ;AMBER_LAGER.c: 296:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"297
+[; ;AMBER_LAGER.c: 297:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"298
+[; ;AMBER_LAGER.c: 298:     lcdData('8');
+[e ( _lcdData (1 -> -> 56 `ui `uc ]
+"299
+[; ;AMBER_LAGER.c: 299:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"301
+[; ;AMBER_LAGER.c: 301:     atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"303
+[; ;AMBER_LAGER.c: 303:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"304
+[; ;AMBER_LAGER.c: 304:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"305
+[; ;AMBER_LAGER.c: 305:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"306
+[; ;AMBER_LAGER.c: 306:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"307
+[; ;AMBER_LAGER.c: 307:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"308
+[; ;AMBER_LAGER.c: 308:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"309
+[; ;AMBER_LAGER.c: 309:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"310
+[; ;AMBER_LAGER.c: 310:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"311
+[; ;AMBER_LAGER.c: 311:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"312
+[; ;AMBER_LAGER.c: 312:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"313
+[; ;AMBER_LAGER.c: 313:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"315
+[; ;AMBER_LAGER.c: 315:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"316
+[; ;AMBER_LAGER.c: 316:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"317
+[; ;AMBER_LAGER.c: 317:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"318
+[; ;AMBER_LAGER.c: 318:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"319
+[; ;AMBER_LAGER.c: 319:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"320
+[; ;AMBER_LAGER.c: 320:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"321
+[; ;AMBER_LAGER.c: 321:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"322
+[; ;AMBER_LAGER.c: 322:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"323
+[; ;AMBER_LAGER.c: 323:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"325
+[; ;AMBER_LAGER.c: 325:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"326
+[; ;AMBER_LAGER.c: 326:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"327
+[; ;AMBER_LAGER.c: 327:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"328
+[; ;AMBER_LAGER.c: 328:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"329
+[; ;AMBER_LAGER.c: 329:     lcdData('3');
+[e ( _lcdData (1 -> -> 51 `ui `uc ]
+"330
+[; ;AMBER_LAGER.c: 330:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"331
+[; ;AMBER_LAGER.c: 331:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"333
+[; ;AMBER_LAGER.c: 333:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"334
+[; ;AMBER_LAGER.c: 334:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"335
+[; ;AMBER_LAGER.c: 335:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"336
+[; ;AMBER_LAGER.c: 336:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"337
+[; ;AMBER_LAGER.c: 337:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"339
+[; ;AMBER_LAGER.c: 339:     atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"341
+[; ;AMBER_LAGER.c: 341:      lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"342
+[; ;AMBER_LAGER.c: 342:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"343
+[; ;AMBER_LAGER.c: 343:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"344
+[; ;AMBER_LAGER.c: 344:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"345
+[; ;AMBER_LAGER.c: 345:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"346
+[; ;AMBER_LAGER.c: 346:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"347
+[; ;AMBER_LAGER.c: 347:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"348
+[; ;AMBER_LAGER.c: 348:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"349
+[; ;AMBER_LAGER.c: 349:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"350
+[; ;AMBER_LAGER.c: 350:     lcdData('5');
+[e ( _lcdData (1 -> -> 53 `ui `uc ]
+"351
+[; ;AMBER_LAGER.c: 351:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"353
+[; ;AMBER_LAGER.c: 353:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"354
+[; ;AMBER_LAGER.c: 354:     lcdData('C');
+[e ( _lcdData (1 -> -> 67 `ui `uc ]
+"355
+[; ;AMBER_LAGER.c: 355:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"356
+[; ;AMBER_LAGER.c: 356:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"357
+[; ;AMBER_LAGER.c: 357:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"358
+[; ;AMBER_LAGER.c: 358:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"359
+[; ;AMBER_LAGER.c: 359:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"360
+[; ;AMBER_LAGER.c: 360:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"361
+[; ;AMBER_LAGER.c: 361:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"362
+[; ;AMBER_LAGER.c: 362:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"364
+[; ;AMBER_LAGER.c: 364:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"365
+[; ;AMBER_LAGER.c: 365:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"366
+[; ;AMBER_LAGER.c: 366:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"367
+[; ;AMBER_LAGER.c: 367:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"368
+[; ;AMBER_LAGER.c: 368:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"369
+[; ;AMBER_LAGER.c: 369:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"370
+[; ;AMBER_LAGER.c: 370:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"372
+[; ;AMBER_LAGER.c: 372:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"373
+[; ;AMBER_LAGER.c: 373:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"374
+[; ;AMBER_LAGER.c: 374:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"375
+[; ;AMBER_LAGER.c: 375:     lcdData('4');
+[e ( _lcdData (1 -> -> 52 `ui `uc ]
+"376
+[; ;AMBER_LAGER.c: 376:     lcdData('%');
+[e ( _lcdData (1 -> -> 37 `ui `uc ]
+"378
+[; ;AMBER_LAGER.c: 378:     atraso_ms(2500);
+[e ( _atraso_ms (1 -> -> 2500 `i `ui ]
+"380
+[; ;AMBER_LAGER.c: 380:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"381
+[; ;AMBER_LAGER.c: 381:     lcdCommand(0x83);
+[e ( _lcdCommand (1 -> -> 131 `i `uc ]
+"382
+[; ;AMBER_LAGER.c: 382:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"383
+[; ;AMBER_LAGER.c: 383:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"384
+[; ;AMBER_LAGER.c: 384:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"385
+[; ;AMBER_LAGER.c: 385:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"386
+[; ;AMBER_LAGER.c: 386:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"387
+[; ;AMBER_LAGER.c: 387:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"388
+[; ;AMBER_LAGER.c: 388:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"389
+[; ;AMBER_LAGER.c: 389:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"390
+[; ;AMBER_LAGER.c: 390:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"391
+[; ;AMBER_LAGER.c: 391:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"393
+[; ;AMBER_LAGER.c: 393:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"394
+[; ;AMBER_LAGER.c: 394:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"395
+[; ;AMBER_LAGER.c: 395:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"396
+[; ;AMBER_LAGER.c: 396:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"397
+[; ;AMBER_LAGER.c: 397:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"398
+[; ;AMBER_LAGER.c: 398:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"399
+[; ;AMBER_LAGER.c: 399:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"401
+[; ;AMBER_LAGER.c: 401:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"402
+[; ;AMBER_LAGER.c: 402:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"403
+[; ;AMBER_LAGER.c: 403:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"404
+[; ;AMBER_LAGER.c: 404:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"405
+[; ;AMBER_LAGER.c: 405:     lcdData('2');
+[e ( _lcdData (1 -> -> 50 `ui `uc ]
+"406
+[; ;AMBER_LAGER.c: 406:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"409
+[; ;AMBER_LAGER.c: 409:      atraso_ms(3000);
+[e ( _atraso_ms (1 -> -> 3000 `i `ui ]
+"412
+[; ;AMBER_LAGER.c: 412:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"413
+[; ;AMBER_LAGER.c: 413:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"414
+[; ;AMBER_LAGER.c: 414:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"415
+[; ;AMBER_LAGER.c: 415:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"416
+[; ;AMBER_LAGER.c: 416:     lcdData('Q');
+[e ( _lcdData (1 -> -> 81 `ui `uc ]
+"417
+[; ;AMBER_LAGER.c: 417:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"418
+[; ;AMBER_LAGER.c: 418:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"419
+[; ;AMBER_LAGER.c: 419:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"420
+[; ;AMBER_LAGER.c: 420:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"421
+[; ;AMBER_LAGER.c: 421:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"422
+[; ;AMBER_LAGER.c: 422:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"423
+[; ;AMBER_LAGER.c: 423:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"424
+[; ;AMBER_LAGER.c: 424:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"425
+[; ;AMBER_LAGER.c: 425:     lcdData('.');
+[e ( _lcdData (1 -> -> 46 `ui `uc ]
+"426
+[; ;AMBER_LAGER.c: 426:     lcdData('.');
+[e ( _lcdData (1 -> -> 46 `ui `uc ]
+"427
+[; ;AMBER_LAGER.c: 427:     lcdData('.');
+[e ( _lcdData (1 -> -> 46 `ui `uc ]
+"429
+[; ;AMBER_LAGER.c: 429: for (;;){
+{
+[e :U 2 ]
+{
+"430
+[; ;AMBER_LAGER.c: 430: switch (slot) {
+[e $U 6  ]
+{
+"431
+[; ;AMBER_LAGER.c: 431: case 0:
+[e :U 7 ]
+"432
+[; ;AMBER_LAGER.c: 432:  atraso_ms(1);
+[e ( _atraso_ms (1 -> -> 1 `i `ui ]
+"433
+[; ;AMBER_LAGER.c: 433:  tmp++;
+[e ++ _tmp -> -> 1 `i `ui ]
+"434
+[; ;AMBER_LAGER.c: 434:  ssdDigit(16 , 3);
+[e ( _ssdDigit (2 , -> -> 16 `i `uc -> -> 3 `i `uc ]
+"435
+[; ;AMBER_LAGER.c: 435:  ssdDigit((tmp/100)%10 , 2);
+[e ( _ssdDigit (2 , -> % / _tmp -> -> 100 `i `ui -> -> 10 `i `ui `uc -> -> 2 `i `uc ]
+"436
+[; ;AMBER_LAGER.c: 436:  ssdDigit((tmp/1000)%10, 1);
+[e ( _ssdDigit (2 , -> % / _tmp -> -> 1000 `i `ui -> -> 10 `i `ui `uc -> -> 1 `i `uc ]
+"437
+[; ;AMBER_LAGER.c: 437:  ssdUpdate();
+[e ( _ssdUpdate ..  ]
+"439
+[; ;AMBER_LAGER.c: 439: if(tmp>= vlr)
+[e $ ! >= _tmp _vlr 8  ]
+"440
+[; ;AMBER_LAGER.c: 440: {
+{
+"441
+[; ;AMBER_LAGER.c: 441:   slot = 1;
+[e = _slot -> -> 1 `i `uc ]
+"442
+[; ;AMBER_LAGER.c: 442: }
+}
+[e :U 8 ]
+"443
+[; ;AMBER_LAGER.c: 443: break;
+[e $U 5  ]
+"445
+[; ;AMBER_LAGER.c: 445: case 1:
+[e :U 9 ]
+"446
+[; ;AMBER_LAGER.c: 446:      cont++;
+[e ++ _cont -> -> 1 `i `ui ]
+"447
+[; ;AMBER_LAGER.c: 447:      tmp = vlr;
+[e = _tmp _vlr ]
+"448
+[; ;AMBER_LAGER.c: 448:      if((cont==1))
+[e $ ! == _cont -> -> 1 `i `ui 10  ]
+"449
+[; ;AMBER_LAGER.c: 449:      {
+{
+"451
+[; ;AMBER_LAGER.c: 451:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"452
+[; ;AMBER_LAGER.c: 452:      atraso_ms(100);
+[e ( _atraso_ms (1 -> -> 100 `i `ui ]
+"453
+[; ;AMBER_LAGER.c: 453:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"455
+[; ;AMBER_LAGER.c: 455:     if(vlr<=6700){
+[e $ ! <= _vlr -> -> 6700 `i `ui 11  ]
+{
+"456
+[; ;AMBER_LAGER.c: 456:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"457
+[; ;AMBER_LAGER.c: 457:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"458
+[; ;AMBER_LAGER.c: 458:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"459
+[; ;AMBER_LAGER.c: 459:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"460
+[; ;AMBER_LAGER.c: 460:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"461
+[; ;AMBER_LAGER.c: 461:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"462
+[; ;AMBER_LAGER.c: 462:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"463
+[; ;AMBER_LAGER.c: 463:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"464
+[; ;AMBER_LAGER.c: 464:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"465
+[; ;AMBER_LAGER.c: 465:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"466
+[; ;AMBER_LAGER.c: 466:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"467
+[; ;AMBER_LAGER.c: 467:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"468
+[; ;AMBER_LAGER.c: 468:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"469
+[; ;AMBER_LAGER.c: 469:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"470
+[; ;AMBER_LAGER.c: 470:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"471
+[; ;AMBER_LAGER.c: 471:     lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"472
+[; ;AMBER_LAGER.c: 472:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"473
+[; ;AMBER_LAGER.c: 473:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"474
+[; ;AMBER_LAGER.c: 474:     lcdCommand(0xDB);
+[e ( _lcdCommand (1 -> -> 219 `i `uc ]
+"475
+[; ;AMBER_LAGER.c: 475:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"476
+[; ;AMBER_LAGER.c: 476:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"477
+[; ;AMBER_LAGER.c: 477:     lcdData('(');
+[e ( _lcdData (1 -> -> 40 `ui `uc ]
+"478
+[; ;AMBER_LAGER.c: 478:     lcdData('#');
+[e ( _lcdData (1 -> -> 35 `ui `uc ]
+"479
+[; ;AMBER_LAGER.c: 479:     lcdData(')');
+[e ( _lcdData (1 -> -> 41 `ui `uc ]
+"480
+[; ;AMBER_LAGER.c: 480:      }
+}
+[e :U 11 ]
+"482
+[; ;AMBER_LAGER.c: 482:      if((vlr<=(6700 +2))&&( vlr > 6700))
+[e $ ! && <= _vlr -> + -> 6700 `i -> 2 `i `ui > _vlr -> -> 6700 `i `ui 12  ]
+"483
+[; ;AMBER_LAGER.c: 483:     {
+{
+"484
+[; ;AMBER_LAGER.c: 484:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"485
+[; ;AMBER_LAGER.c: 485:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"486
+[; ;AMBER_LAGER.c: 486:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"487
+[; ;AMBER_LAGER.c: 487:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"488
+[; ;AMBER_LAGER.c: 488:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"489
+[; ;AMBER_LAGER.c: 489:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"490
+[; ;AMBER_LAGER.c: 490:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"491
+[; ;AMBER_LAGER.c: 491:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"492
+[; ;AMBER_LAGER.c: 492:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"493
+[; ;AMBER_LAGER.c: 493:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"494
+[; ;AMBER_LAGER.c: 494:      vlr = 6700 + 2;
+[e = _vlr -> + -> 6700 `i -> 2 `i `ui ]
+"495
+[; ;AMBER_LAGER.c: 495:     }
+}
+[e :U 12 ]
+"497
+[; ;AMBER_LAGER.c: 497:      if((vlr<=7600)&&( vlr > (6700 +2)))
+[e $ ! && <= _vlr -> -> 7600 `i `ui > _vlr -> + -> 6700 `i -> 2 `i `ui 13  ]
+"498
+[; ;AMBER_LAGER.c: 498:     {
+{
+"499
+[; ;AMBER_LAGER.c: 499:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"500
+[; ;AMBER_LAGER.c: 500:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"501
+[; ;AMBER_LAGER.c: 501:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"502
+[; ;AMBER_LAGER.c: 502:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"503
+[; ;AMBER_LAGER.c: 503:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"504
+[; ;AMBER_LAGER.c: 504:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"505
+[; ;AMBER_LAGER.c: 505:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"506
+[; ;AMBER_LAGER.c: 506:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"507
+[; ;AMBER_LAGER.c: 507:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"508
+[; ;AMBER_LAGER.c: 508:     lcdData(i + 0x30);
+[e ( _lcdData (1 -> + _i -> -> 48 `i `ui `uc ]
+"509
+[; ;AMBER_LAGER.c: 509:     }
+}
+[e :U 13 ]
+"511
+[; ;AMBER_LAGER.c: 511:      if((i==5)&&(vlr<=9900))
+[e $ ! && == _i -> -> 5 `i `ui <= _vlr -> -> 9900 `i `ui 14  ]
+"512
+[; ;AMBER_LAGER.c: 512:     {
+{
+"513
+[; ;AMBER_LAGER.c: 513:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"514
+[; ;AMBER_LAGER.c: 514:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"515
+[; ;AMBER_LAGER.c: 515:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"516
+[; ;AMBER_LAGER.c: 516:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"517
+[; ;AMBER_LAGER.c: 517:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"518
+[; ;AMBER_LAGER.c: 518:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"519
+[; ;AMBER_LAGER.c: 519:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"520
+[; ;AMBER_LAGER.c: 520:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"521
+[; ;AMBER_LAGER.c: 521:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"522
+[; ;AMBER_LAGER.c: 522:     pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"524
+[; ;AMBER_LAGER.c: 524:     }
+}
+[e :U 14 ]
+"526
+[; ;AMBER_LAGER.c: 526:      if((i==6)||(i==8))
+[e $ ! || == _i -> -> 6 `i `ui == _i -> -> 8 `i `ui 15  ]
+"527
+[; ;AMBER_LAGER.c: 527:     {
+{
+"528
+[; ;AMBER_LAGER.c: 528:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"529
+[; ;AMBER_LAGER.c: 529:     lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"530
+[; ;AMBER_LAGER.c: 530:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"531
+[; ;AMBER_LAGER.c: 531:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"532
+[; ;AMBER_LAGER.c: 532:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"533
+[; ;AMBER_LAGER.c: 533:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"534
+[; ;AMBER_LAGER.c: 534:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"535
+[; ;AMBER_LAGER.c: 535:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"536
+[; ;AMBER_LAGER.c: 536:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"538
+[; ;AMBER_LAGER.c: 538:     if(i==8)
+[e $ ! == _i -> -> 8 `i `ui 16  ]
+"539
+[; ;AMBER_LAGER.c: 539:     {
+{
+"540
+[; ;AMBER_LAGER.c: 540:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"541
+[; ;AMBER_LAGER.c: 541:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"543
+[; ;AMBER_LAGER.c: 543:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"544
+[; ;AMBER_LAGER.c: 544:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"545
+[; ;AMBER_LAGER.c: 545:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"546
+[; ;AMBER_LAGER.c: 546:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"547
+[; ;AMBER_LAGER.c: 547:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"548
+[; ;AMBER_LAGER.c: 548:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"549
+[; ;AMBER_LAGER.c: 549:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"550
+[; ;AMBER_LAGER.c: 550:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"551
+[; ;AMBER_LAGER.c: 551:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"552
+[; ;AMBER_LAGER.c: 552:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"553
+[; ;AMBER_LAGER.c: 553:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"554
+[; ;AMBER_LAGER.c: 554:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"555
+[; ;AMBER_LAGER.c: 555:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"556
+[; ;AMBER_LAGER.c: 556:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"557
+[; ;AMBER_LAGER.c: 557:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"558
+[; ;AMBER_LAGER.c: 558:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"560
+[; ;AMBER_LAGER.c: 560:     lcdCommand(0xA8);
+[e ( _lcdCommand (1 -> -> 168 `i `uc ]
+"561
+[; ;AMBER_LAGER.c: 561:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"562
+[; ;AMBER_LAGER.c: 562:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"563
+[; ;AMBER_LAGER.c: 563:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"564
+[; ;AMBER_LAGER.c: 564:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"565
+[; ;AMBER_LAGER.c: 565:     lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"566
+[; ;AMBER_LAGER.c: 566:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"567
+[; ;AMBER_LAGER.c: 567:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"568
+[; ;AMBER_LAGER.c: 568:     lcdData('B');
+[e ( _lcdData (1 -> -> 66 `ui `uc ]
+"569
+[; ;AMBER_LAGER.c: 569:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"570
+[; ;AMBER_LAGER.c: 570:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"571
+[; ;AMBER_LAGER.c: 571:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"572
+[; ;AMBER_LAGER.c: 572:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"573
+[; ;AMBER_LAGER.c: 573:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"574
+[; ;AMBER_LAGER.c: 574:     lcdData('G');
+[e ( _lcdData (1 -> -> 71 `ui `uc ]
+"575
+[; ;AMBER_LAGER.c: 575:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"576
+[; ;AMBER_LAGER.c: 576:     lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"579
+[; ;AMBER_LAGER.c: 579:     lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"580
+[; ;AMBER_LAGER.c: 580:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"581
+[; ;AMBER_LAGER.c: 581:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"582
+[; ;AMBER_LAGER.c: 582:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"583
+[; ;AMBER_LAGER.c: 583:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"584
+[; ;AMBER_LAGER.c: 584:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"585
+[; ;AMBER_LAGER.c: 585:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"586
+[; ;AMBER_LAGER.c: 586:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"587
+[; ;AMBER_LAGER.c: 587:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"588
+[; ;AMBER_LAGER.c: 588:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"589
+[; ;AMBER_LAGER.c: 589:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"590
+[; ;AMBER_LAGER.c: 590:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"591
+[; ;AMBER_LAGER.c: 591:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"592
+[; ;AMBER_LAGER.c: 592:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"593
+[; ;AMBER_LAGER.c: 593:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"594
+[; ;AMBER_LAGER.c: 594:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"595
+[; ;AMBER_LAGER.c: 595:     lcdData('-');
+[e ( _lcdData (1 -> -> 45 `ui `uc ]
+"596
+[; ;AMBER_LAGER.c: 596:     vlr = 2500;
+[e = _vlr -> -> 2500 `i `ui ]
+"598
+[; ;AMBER_LAGER.c: 598:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"599
+[; ;AMBER_LAGER.c: 599:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"600
+[; ;AMBER_LAGER.c: 600:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"601
+[; ;AMBER_LAGER.c: 601:      atraso_ms(200);
+[e ( _atraso_ms (1 -> -> 200 `i `ui ]
+"602
+[; ;AMBER_LAGER.c: 602:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"603
+[; ;AMBER_LAGER.c: 603:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"604
+[; ;AMBER_LAGER.c: 604:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"605
+[; ;AMBER_LAGER.c: 605:      atraso_ms(200);
+[e ( _atraso_ms (1 -> -> 200 `i `ui ]
+"606
+[; ;AMBER_LAGER.c: 606:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"607
+[; ;AMBER_LAGER.c: 607:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"608
+[; ;AMBER_LAGER.c: 608:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"609
+[; ;AMBER_LAGER.c: 609:      atraso_ms(200);
+[e ( _atraso_ms (1 -> -> 200 `i `ui ]
+"610
+[; ;AMBER_LAGER.c: 610:      pwmSet2(50);
+[e ( _pwmSet2 (1 -> -> 50 `i `uc ]
+"611
+[; ;AMBER_LAGER.c: 611:      atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"612
+[; ;AMBER_LAGER.c: 612:      pwmSet2(0);
+[e ( _pwmSet2 (1 -> -> 0 `i `uc ]
+"613
+[; ;AMBER_LAGER.c: 613:     }
+}
+[e :U 16 ]
+"615
+[; ;AMBER_LAGER.c: 615:     }
+}
+[e :U 15 ]
+"616
+[; ;AMBER_LAGER.c: 616:      if((i==7)&&(vlr<=9900))
+[e $ ! && == _i -> -> 7 `i `ui <= _vlr -> -> 9900 `i `ui 17  ]
+"617
+[; ;AMBER_LAGER.c: 617:     {
+{
+"618
+[; ;AMBER_LAGER.c: 618:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"619
+[; ;AMBER_LAGER.c: 619:     lcdCommand(0x85);
+[e ( _lcdCommand (1 -> -> 133 `i `uc ]
+"620
+[; ;AMBER_LAGER.c: 620:     lcdData('F');
+[e ( _lcdData (1 -> -> 70 `ui `uc ]
+"621
+[; ;AMBER_LAGER.c: 621:     lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"622
+[; ;AMBER_LAGER.c: 622:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"623
+[; ;AMBER_LAGER.c: 623:     lcdData('V');
+[e ( _lcdData (1 -> -> 86 `ui `uc ]
+"624
+[; ;AMBER_LAGER.c: 624:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"625
+[; ;AMBER_LAGER.c: 625:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"626
+[; ;AMBER_LAGER.c: 626:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"627
+[; ;AMBER_LAGER.c: 627:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"628
+[; ;AMBER_LAGER.c: 628:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"629
+[; ;AMBER_LAGER.c: 629:     lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"630
+[; ;AMBER_LAGER.c: 630:     lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"631
+[; ;AMBER_LAGER.c: 631:     lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"632
+[; ;AMBER_LAGER.c: 632:     lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"633
+[; ;AMBER_LAGER.c: 633:     lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"634
+[; ;AMBER_LAGER.c: 634:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"635
+[; ;AMBER_LAGER.c: 635:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"636
+[; ;AMBER_LAGER.c: 636:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"637
+[; ;AMBER_LAGER.c: 637:     lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"638
+[; ;AMBER_LAGER.c: 638:     lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"639
+[; ;AMBER_LAGER.c: 639:     lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"640
+[; ;AMBER_LAGER.c: 640:     lcdData('0');
+[e ( _lcdData (1 -> -> 48 `ui `uc ]
+"641
+[; ;AMBER_LAGER.c: 641:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"642
+[; ;AMBER_LAGER.c: 642:     lcdData('1');
+[e ( _lcdData (1 -> -> 49 `ui `uc ]
+"643
+[; ;AMBER_LAGER.c: 643:     lcdCommand(0xDB);
+[e ( _lcdCommand (1 -> -> 219 `i `uc ]
+"644
+[; ;AMBER_LAGER.c: 644:     lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"645
+[; ;AMBER_LAGER.c: 645:     lcdData('K');
+[e ( _lcdData (1 -> -> 75 `ui `uc ]
+"646
+[; ;AMBER_LAGER.c: 646:     lcdData('(');
+[e ( _lcdData (1 -> -> 40 `ui `uc ]
+"647
+[; ;AMBER_LAGER.c: 647:     lcdData('#');
+[e ( _lcdData (1 -> -> 35 `ui `uc ]
+"648
+[; ;AMBER_LAGER.c: 648:     lcdData(')');
+[e ( _lcdData (1 -> -> 41 `ui `uc ]
+"649
+[; ;AMBER_LAGER.c: 649:      pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"650
+[; ;AMBER_LAGER.c: 650:      i = 10;
+[e = _i -> -> 10 `i `ui ]
+"652
+[; ;AMBER_LAGER.c: 652:     }
+}
+[e :U 17 ]
+"653
+[; ;AMBER_LAGER.c: 653:      }
+}
+[e :U 10 ]
+"655
+[; ;AMBER_LAGER.c: 655:      Tecl();
+[e ( _Tecl ..  ]
+"656
+[; ;AMBER_LAGER.c: 656:      kpDebounce();
+[e ( _kpDebounce ..  ]
+"658
+[; ;AMBER_LAGER.c: 658:      slot = 2;
+[e = _slot -> -> 2 `i `uc ]
+"659
+[; ;AMBER_LAGER.c: 659:      break;
+[e $U 5  ]
+"661
+[; ;AMBER_LAGER.c: 661: case 2:
+[e :U 18 ]
+"662
+[; ;AMBER_LAGER.c: 662:     if((vlr >= (6700 +1))&&(i < 9))
+[e $ ! && >= _vlr -> + -> 6700 `i -> 1 `i `ui < _i -> -> 9 `i `ui 19  ]
+"663
+[; ;AMBER_LAGER.c: 663:     {
+{
+"665
+[; ;AMBER_LAGER.c: 665:     lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"666
+[; ;AMBER_LAGER.c: 666:     lcdData((time/1000)%10 + '0');
+[e ( _lcdData (1 -> + % / _time -> -> 1000 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+"667
+[; ;AMBER_LAGER.c: 667:     lcdData((time/100)%10 + '0');
+[e ( _lcdData (1 -> + % / _time -> -> 100 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+"668
+[; ;AMBER_LAGER.c: 668:     lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"669
+[; ;AMBER_LAGER.c: 669:     lcdData('m');
+[e ( _lcdData (1 -> -> 109 `ui `uc ]
+"670
+[; ;AMBER_LAGER.c: 670:     lcdData('i');
+[e ( _lcdData (1 -> -> 105 `ui `uc ]
+"671
+[; ;AMBER_LAGER.c: 671:     lcdData('n');
+[e ( _lcdData (1 -> -> 110 `ui `uc ]
+"673
+[; ;AMBER_LAGER.c: 673:     if(time != 0 )
+[e $ ! != _time -> -> 0 `i `ui 20  ]
+"674
+[; ;AMBER_LAGER.c: 674:     {
+{
+"675
+[; ;AMBER_LAGER.c: 675:       time --;
+[e -- _time -> -> 1 `i `ui ]
+"676
+[; ;AMBER_LAGER.c: 676:      }
+}
+[e $U 21  ]
+"678
+[; ;AMBER_LAGER.c: 678:     else
+[e :U 20 ]
+"679
+[; ;AMBER_LAGER.c: 679:     {
+{
+"680
+[; ;AMBER_LAGER.c: 680:         switch(vlr)
+[e $U 23  ]
+"681
+[; ;AMBER_LAGER.c: 681:         {
+{
+"683
+[; ;AMBER_LAGER.c: 683:         case (6700 +1):
+[e :U 24 ]
+"684
+[; ;AMBER_LAGER.c: 684:             time = 7500;
+[e = _time -> -> 7500 `i `ui ]
+"685
+[; ;AMBER_LAGER.c: 685:             break;
+[e $U 22  ]
+"686
+[; ;AMBER_LAGER.c: 686:         case (6700 +2):
+[e :U 25 ]
+"687
+[; ;AMBER_LAGER.c: 687:         vlr = 7600 ;
+[e = _vlr -> -> 7600 `i `ui ]
+"688
+[; ;AMBER_LAGER.c: 688:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"689
+[; ;AMBER_LAGER.c: 689:         i=1;
+[e = _i -> -> 1 `i `ui ]
+"690
+[; ;AMBER_LAGER.c: 690:         time = 1000;
+[e = _time -> -> 1000 `i `ui ]
+"691
+[; ;AMBER_LAGER.c: 691:             break;
+[e $U 22  ]
+"692
+[; ;AMBER_LAGER.c: 692:         case 7600:
+[e :U 26 ]
+"693
+[; ;AMBER_LAGER.c: 693:         vlr = 9900 ;
+[e = _vlr -> -> 9900 `i `ui ]
+"694
+[; ;AMBER_LAGER.c: 694:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"695
+[; ;AMBER_LAGER.c: 695:         i=5;
+[e = _i -> -> 5 `i `ui ]
+"696
+[; ;AMBER_LAGER.c: 696:         time = 1000;
+[e = _time -> -> 1000 `i `ui ]
+"697
+[; ;AMBER_LAGER.c: 697:             break;
+[e $U 22  ]
+"699
+[; ;AMBER_LAGER.c: 699:         case 9900:
+[e :U 27 ]
+"700
+[; ;AMBER_LAGER.c: 700:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"701
+[; ;AMBER_LAGER.c: 701:         i=7;
+[e = _i -> -> 7 `i `ui ]
+"702
+[; ;AMBER_LAGER.c: 702:         time = 5000;
+[e = _time -> -> 5000 `i `ui ]
+"703
+[; ;AMBER_LAGER.c: 703:             break;
+[e $U 22  ]
+"704
+[; ;AMBER_LAGER.c: 704:         case (9900 +1):
+[e :U 28 ]
+"705
+[; ;AMBER_LAGER.c: 705:         cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"706
+[; ;AMBER_LAGER.c: 706:         i=8;
+[e = _i -> -> 8 `i `ui ]
+"707
+[; ;AMBER_LAGER.c: 707:             break;
+[e $U 22  ]
+"709
+[; ;AMBER_LAGER.c: 709:         }
+}
+[e $U 22  ]
+[e :U 23 ]
+[e [\ _vlr , $ -> + -> 6700 `i -> 1 `i `ui 24
+ , $ -> + -> 6700 `i -> 2 `i `ui 25
+ , $ -> -> 7600 `i `ui 26
+ , $ -> -> 9900 `i `ui 27
+ , $ -> + -> 9900 `i -> 1 `i `ui 28
+ 22 ]
+[e :U 22 ]
+"710
+[; ;AMBER_LAGER.c: 710:     }
+}
+[e :U 21 ]
+"712
+[; ;AMBER_LAGER.c: 712:    }
+}
+[e :U 19 ]
+"713
+[; ;AMBER_LAGER.c: 713:   slot = 0 ;
+[e = _slot -> -> 0 `i `uc ]
+"715
+[; ;AMBER_LAGER.c: 715:   break;
+[e $U 5  ]
+"717
+[; ;AMBER_LAGER.c: 717: default:
+[e :U 29 ]
+"718
+[; ;AMBER_LAGER.c: 718: slot = 0;
+[e = _slot -> -> 0 `i `uc ]
+"719
+[; ;AMBER_LAGER.c: 719: break;
+[e $U 5  ]
+"721
+[; ;AMBER_LAGER.c: 721:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _slot `i , $ -> 0 `i 7
+ , $ -> 1 `i 9
+ , $ -> 2 `i 18
+ 29 ]
+[e :U 5 ]
+"723
+[; ;AMBER_LAGER.c: 723:  }
+}
+[e $U 2  ]
+[e :U 3 ]
+}
+"725
+[; ;AMBER_LAGER.c: 725: }
+[e :UE 1 ]
+}
+"730
+[; ;AMBER_LAGER.c: 730: void Tecl() {
+[v _Tecl `(v ~T0 @X0 1 ef ]
+{
+[e :U _Tecl ]
+[f ]
+"731
+[; ;AMBER_LAGER.c: 731:   int t ;
+[v _t `i ~T0 @X0 1 a ]
+"733
+[; ;AMBER_LAGER.c: 733: lcdCommand(0x80);
+[e ( _lcdCommand (1 -> -> 128 `i `uc ]
+"735
+[; ;AMBER_LAGER.c: 735: if(kpRead()!= t)
+[e $ ! != ( _kpRead ..  -> _t `ui 31  ]
+"736
+[; ;AMBER_LAGER.c: 736: {
+{
+"737
+[; ;AMBER_LAGER.c: 737:     t = kpRead() ;
+[e = _t -> ( _kpRead ..  `i ]
+"738
+[; ;AMBER_LAGER.c: 738: }
+}
+[e :U 31 ]
+"740
+[; ;AMBER_LAGER.c: 740: if((((kpRead()) & (1<<8)))&&(vlr < (6700 +1)))
+[e $ ! && != & ( _kpRead ..  -> << -> 1 `i -> 8 `i `ui -> -> 0 `i `ui < _vlr -> + -> 6700 `i -> 1 `i `ui 32  ]
+"741
+[; ;AMBER_LAGER.c: 741: {
+{
+"742
+[; ;AMBER_LAGER.c: 742:    lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"743
+[; ;AMBER_LAGER.c: 743:    lcdData('M');
+[e ( _lcdData (1 -> -> 77 `ui `uc ]
+"744
+[; ;AMBER_LAGER.c: 744:    lcdData('A');
+[e ( _lcdData (1 -> -> 65 `ui `uc ]
+"745
+[; ;AMBER_LAGER.c: 745:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"746
+[; ;AMBER_LAGER.c: 746:    lcdData('T');
+[e ( _lcdData (1 -> -> 84 `ui `uc ]
+"747
+[; ;AMBER_LAGER.c: 747:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"748
+[; ;AMBER_LAGER.c: 748:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"749
+[; ;AMBER_LAGER.c: 749:    lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"750
+[; ;AMBER_LAGER.c: 750:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"751
+[; ;AMBER_LAGER.c: 751:    lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"752
+[; ;AMBER_LAGER.c: 752:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"753
+[; ;AMBER_LAGER.c: 753:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"754
+[; ;AMBER_LAGER.c: 754:    lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"755
+[; ;AMBER_LAGER.c: 755:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"756
+[; ;AMBER_LAGER.c: 756:    lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"757
+[; ;AMBER_LAGER.c: 757:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"758
+[; ;AMBER_LAGER.c: 758:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"759
+[; ;AMBER_LAGER.c: 759:    pwmSet1(50);
+[e ( _pwmSet1 (1 -> -> 50 `i `uc ]
+"760
+[; ;AMBER_LAGER.c: 760:    vlr = (6700 +1);
+[e = _vlr -> + -> 6700 `i -> 1 `i `ui ]
+"761
+[; ;AMBER_LAGER.c: 761:    tmp = (6700 +1);
+[e = _tmp -> + -> 6700 `i -> 1 `i `ui ]
+"762
+[; ;AMBER_LAGER.c: 762:    cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"763
+[; ;AMBER_LAGER.c: 763:    atraso_ms(550);
+[e ( _atraso_ms (1 -> -> 550 `i `ui ]
+"764
+[; ;AMBER_LAGER.c: 764: }
+}
+[e :U 32 ]
+"766
+[; ;AMBER_LAGER.c: 766: if((i == 10 )&&(((kpRead()) & (1<<8))))
+[e $ ! && == _i -> -> 10 `i `ui != & ( _kpRead ..  -> << -> 1 `i -> 8 `i `ui -> -> 0 `i `ui 33  ]
+"767
+[; ;AMBER_LAGER.c: 767: {
+{
+"768
+[; ;AMBER_LAGER.c: 768:    lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"769
+[; ;AMBER_LAGER.c: 769:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"770
+[; ;AMBER_LAGER.c: 770:    lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"771
+[; ;AMBER_LAGER.c: 771:    lcdData('P');
+[e ( _lcdData (1 -> -> 80 `ui `uc ]
+"772
+[; ;AMBER_LAGER.c: 772:    lcdData('U');
+[e ( _lcdData (1 -> -> 85 `ui `uc ]
+"773
+[; ;AMBER_LAGER.c: 773:    lcdData('L');
+[e ( _lcdData (1 -> -> 76 `ui `uc ]
+"774
+[; ;AMBER_LAGER.c: 774:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"775
+[; ;AMBER_LAGER.c: 775:    lcdData(0x00);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"776
+[; ;AMBER_LAGER.c: 776:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"777
+[; ;AMBER_LAGER.c: 777:    lcdData('N');
+[e ( _lcdData (1 -> -> 78 `ui `uc ]
+"778
+[; ;AMBER_LAGER.c: 778:    lcdData('S');
+[e ( _lcdData (1 -> -> 83 `ui `uc ]
+"779
+[; ;AMBER_LAGER.c: 779:    lcdData('E');
+[e ( _lcdData (1 -> -> 69 `ui `uc ]
+"780
+[; ;AMBER_LAGER.c: 780:    lcdData('R');
+[e ( _lcdData (1 -> -> 82 `ui `uc ]
+"781
+[; ;AMBER_LAGER.c: 781:    lcdData('I');
+[e ( _lcdData (1 -> -> 73 `ui `uc ]
+"782
+[; ;AMBER_LAGER.c: 782:    lcdData('D');
+[e ( _lcdData (1 -> -> 68 `ui `uc ]
+"783
+[; ;AMBER_LAGER.c: 783:    lcdData('O');
+[e ( _lcdData (1 -> -> 79 `ui `uc ]
+"784
+[; ;AMBER_LAGER.c: 784:    cont = 0;
+[e = _cont -> -> 0 `i `ui ]
+"785
+[; ;AMBER_LAGER.c: 785:    i = 6;
+[e = _i -> -> 6 `i `ui ]
+"786
+[; ;AMBER_LAGER.c: 786:    vlr = 9900 + 1;
+[e = _vlr -> + -> 9900 `i -> 1 `i `ui ]
+"787
+[; ;AMBER_LAGER.c: 787:    atraso_ms(550);
+[e ( _atraso_ms (1 -> -> 550 `i `ui ]
+"788
+[; ;AMBER_LAGER.c: 788: }
+}
+[e :U 33 ]
+"790
+[; ;AMBER_LAGER.c: 790: }
+[e :UE 30 ]
+}

@@ -56,19 +56,22 @@ A `main` foi desenvolvida utilizando como base o próprio funcionamento em coope
 Por fim, é realizada a simulação de todo o funcionamento da microcervejaria, verificando a utilização da `main()` inicialmente e das funções `amber_lager()` ou `k_weissbier()`, dependendo da escolha do usuário. 
 
 Incialmente são exibidas as receitas
+
 ![receitas](Receitas.PNG)
 
 Então é possível navegar entre a tela de receitas e de escolha, nas quais é possível pressionar as teclas `1` (Amber Lager), `2` (Kristall Weissbier), `*`(Voltar) e `#`(Prosseguir)
+
 ![escolha](Escolha.PNG)
 
 Posteriormente a receita é iniciada, os detalhes desta são exibidos e a temperatura começa a subir até o `degrau0` daquela cerveja, então o controlador aguardará a inserção dos maltes
+
 ![imaltes](Insira_Maltes.PNG)
 
-`Lorem_Ipsum`
+O processo retorna e percorrerá o restante dos degraus, com avisos sonoros em cada etapa e decrescendo o tempo em minutos até chegar à fervura, a qual funcionará exatamente da mesma forma, no entanto ao invés de aguardar a inserção de malte, aguardará a inserção de lúpulo.
 
 ![degTempo](Degrau_Tempo.PNG)
 
-`Lorem_Ipsum`
+Por fim, um outro aviso sonoro será disparado para avisar ao usuário o final da receita, juntamente com o aviso na tela de LCD, nesta etapa a temperatura retorna às suas condições normais
 
 ![fim](Fim.PNG)
 

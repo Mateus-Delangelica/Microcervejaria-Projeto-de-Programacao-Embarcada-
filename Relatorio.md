@@ -34,17 +34,18 @@ Foi utilizado em abundância nas duas receitas a ferramenta de `define`, de form
 ![defines](Defines.PNG)
 
 Também foram utilizadas variáveis globais no projeto, a fim de permitir que funções como a `Teclado()` possam ter mais liberdade dentro do programa. Essas variáveis são comuns aos códigos das duas receitas e são cruciais para que tudo funcione conforme planejado, elas são : 
-- valor : ; 
-- temp : ;
-- i : ;
-- time : ;
+- valor : incia com o de `degrau0` e vai sendo alterado conforme as etapas se passam, representa o valor "meta" que a temperatura irá atingir ; 
+- temp : inicia como zero e vai sendo incrementado durante as etapas até atingir a variável `valor` ;
+- i : inicia em 1 e é utilizado como flag para que o programa possa percorrer as etapas e saber em qual está ;
+- time : inicia em 0 e é utilizado para contagem e controle de tempo, no caso deste projeto o tempo é exibido como minutos porém a contagem em `time` que é utilizada é em uma janela de tempo bem inferior, aproximando-se dos segundos ;
+
 ![vglobais](Variaveis_Globais.PNG)
 
-`Lorem_Ipsum`
+Também foi desenvolvida, para permitir que o usuário informe quando alguma ação e o programa deve prosseguir, a função `Teclado()`, que realizará ações diferentes dependendo da etapa da brassagem.  
 
 ![vteclado](Void_Teclado.PNG)
 
-`Lorem_Ipsum`
+Por fim, depois de desenvolvidas as funções `amber_lager()` e `k_weissbier()` partindo da mesma base citada anteriormente, é criado o arquivo `receitas.h` para agrupar todas as funções em um cabeçalho e posteriormente utilizá-las na função `main()`. 
 
 ![receitash](receitash.PNG)
 

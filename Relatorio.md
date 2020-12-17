@@ -25,16 +25,19 @@ Já no caso da `main()`, o uso das bibliotecas ficou ligeiramente reduzido, isso
 Nesta etapa do desenvolvimento, notou-se que algumas das bibliotecas utilizadas, se colocadas em conjunto com as originais do desenvolvedor do software do PICSimLab, entravam em conflito e o funcionamento da simulação se tornava instável. Assim, todas as bibliotecas originais foram retiradas e todo o projeto foi feito utilizando apenas as fornecidas durante a matéria de ECOP04, desenvolvidas pelo professor Rodrigo Maximiano de Almeida. 
 
 ## Passo 02 - Desenvolver as Funções das Receitas e Funções Auxiliares
-`Lorem_Ipsum`
+As funções desenvolvidas para as receitas disponibilizadas nesta versão do projeto seguem a mesma arquitetura de cooperative multitasking, buscando otimizar o tempo e tornar o processo de programação mais dinâmico. Além disso, assemelham-se em seu funcionamento, já que todas devem ter degraus de temperatura, tempos em cada degrau, pausas para inserção de insumos, etapa de fervura e tela final, com alterações apenas nos valores / quantidade de parâmetros. 
 
 ![kweiss](k_weissbier.PNG)
 
-`Lorem_Ipsum`
+Foi utilizado em abundância nas duas receitas a ferramenta de `define`, de forma a permitir alterações simplificas e a reutilização de código entre cervejas, alterando apenas os valores / quantidades das etapas. Neste caso (Kristall Weissbier) são 6 degraus, contando com o de fervura.
 
 ![defines](Defines.PNG)
 
-`Lorem_Ipsum`
-
+Também foram utilizadas variáveis globais no projeto, a fim de permitir que funções como a `Teclado()` possam ter mais liberdade dentro do programa. Essas variáveis são comuns aos códigos das duas receitas e são cruciais para que tudo funcione conforme planejado, elas são : 
+- valor : ; 
+- temp : ;
+- i : ;
+- time : ;
 ![vglobais](Variaveis_Globais.PNG)
 
 `Lorem_Ipsum`
@@ -44,8 +47,6 @@ Nesta etapa do desenvolvimento, notou-se que algumas das bibliotecas utilizadas,
 `Lorem_Ipsum`
 
 ![receitash](receitash.PNG)
-
-`Lorem_Ipsum`
 
 ## Passo 03 - Desenvolver a main()
 A `main` foi desenvolvida utilizando como base o próprio funcionamento em cooperative multitasking das funções `amber_lager()` e `k_weissbier()`, no entanto, diferentemente de realizar ações envolvendo o buzzer, o cooler ou o display de 7 segmentos, utiliza apenas o teclado matricial e o display de LCD. A função `escolha()` permite que seja possível verificar a afirmação anterior, sendo ela uma simplificação da função `Teclado()` para apenas alterar telas do display e chamar as funções das receitas escolhidas.
